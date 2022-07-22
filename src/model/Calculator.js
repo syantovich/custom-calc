@@ -1,4 +1,5 @@
 import { types } from "../controller/commands";
+import { findOpenBrakets } from "../controller/functions";
 
 export class Calculator {
   constructor() {
@@ -27,20 +28,26 @@ export class Calculator {
       if (this.openBrakets.length < 0) {
         return false;
       }
-      switch (command.type) {
-        case types.calcString:
-          this.calculateString(command, string);
-          break;
-        case types.calcAction:
-          this.calculateAction(command, string);
-          break;
-        case types.calcPercent:
-          this.calculatePercent(command, string);
-      }
-      if (string.split(/[-^/(+*]/).length === 2 && string[0] === "+") {
-        let newString = string.split("");
-        newString.shift();
-        string = newString.join("");
+      try {
+        switch (command.type) {
+          case types.calcString:
+            this.calculateString(command, string);
+            break;
+          case types.calcAction:
+            this.calculateAction(command, string);
+            break;
+          case types.calcPercent:
+            this.calculatePercent(command, string);
+        }
+
+        if (string.split(/[-^/(+*]/).length === 2 && string[0] === "+") {
+          let newString = string.split("");
+          newString.shift();
+          string = newString.join("");
+        }
+      } catch (e) {
+        this.setString(e);
+        this.openBrakets = [];
       }
       this.next = undefined;
       this.changeIsEdit(false);
@@ -50,13 +57,7 @@ export class Calculator {
         this.changeIsEdit(true);
         let obj = command.undo(this.commands);
         if (obj.string) {
-          this.openBrakets = [];
-          let index = 0;
-          while (obj.string.slice(index).indexOf("(") !== -1) {
-            let open = obj.string.slice(index).indexOf("(");
-            index = open + 1;
-            this.openBrakets.push(open);
-          }
+          findOpenBrakets(obj.string, this);
           this.setString(obj.string);
         }
         this.commands.pop();
@@ -72,6 +73,7 @@ export class Calculator {
       });
       let oldString = string;
       const lengthOpenBrackets = this.openBrakets.length;
+
       if (
         command.symbol === ")" ||
         (command.symbol === "=" && this.openBrakets.length)
@@ -83,10 +85,6 @@ export class Calculator {
         this.current = command.execute(
           string.slice(this.getIndex(), `${string}`.length)
         );
-        if (isNaN(this.current)) {
-          this.setString(this.current);
-          return false;
-        }
       }
 
       let newString = string.split("");
@@ -124,7 +122,6 @@ export class Calculator {
         this.memory = command.execute(
           `${this.memory}${value >= 0 ? "+" : ""}${value}`
         );
-        console.log(this.memory);
       }
     }
   }
@@ -139,23 +136,18 @@ export class Calculator {
     if (/[0-9]/.test(string[index])) {
       index = this.findIndexWithMark(index, string);
     } else {
-      this.setString("Выполнить действие невозможно");
-      return;
+      throw "Выполнить действие невозможно";
     }
     let newString = string.split("");
     try {
       this.next = command.execute(
         +newString.slice(index, `${string}`.length).join("")
       );
-      if (isNaN(this.next)) {
-        this.setString(this.next);
-        return false;
-      }
       newString.splice(index, `${string}`.length, this.next);
       this.setString(newString.join(""));
       return true;
     } catch {
-      this.setString("Неверный ввод");
+      throw "Неверный ввод";
     }
   }
   calculatePercent(command, string) {
@@ -170,14 +162,10 @@ export class Calculator {
     }
 
     if (index === false) {
-      alert("You need to write some action");
-      this.setString("You need to write some action");
-      return false;
+      throw "You need to write some action";
     }
-    console.log(string.split(""));
 
     this.next = string.slice(firstIndex);
-    console.log(this.current, this.next);
 
     this.next = command.execute(+this.current, +this.next);
     this.commands.push({

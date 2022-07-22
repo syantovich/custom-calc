@@ -25,7 +25,7 @@ export function calc(str) {
   };
   for (let i = 0; i < str.length; i++) {
     if (!(str[i] in num) && !(str[i] in symbol)) {
-      return "В строке содержаться недопустимые символы!";
+      throw "В строке содержаться недопустимые символы!";
     }
   }
   //Проверка одинаковое ли количество скобок
@@ -40,11 +40,11 @@ export function calc(str) {
       close++;
     }
     if (open < close) {
-      return "Проверьте скобки";
+      throw "Проверьте скобки";
     }
   }
   if (open !== close) {
-    return "Проверьте скобки";
+    throw "Проверьте скобки";
   }
 
   for (let i = 0; i < str.length; i++) {
@@ -96,7 +96,7 @@ export function calc(str) {
         open++;
       }
       if (end === "Ошибка") {
-        return end;
+        throw end;
       }
       open--;
       str.splice(open + 1, close - open + 2, end);
@@ -118,9 +118,8 @@ export function calc(str) {
   let symbolsArr = str.join("").split(/[0-9]/).join("");
 
   if (symbolsArr.length >= numbersArr.length) {
-    return "Ошибка";
+    throw "Ошибка";
   }
-  console.log(str);
   while (str.indexOf("^") !== -1) {
     for (let i = 0; i < str.length; i++) {
       if (str[i] === "^") {
@@ -153,10 +152,10 @@ export function calc(str) {
   }
   endV = parseFloat(endV.toPrecision(12));
   if (endV === Infinity || endV === -Infinity) {
-    endV = "Деление на ноль не возможно";
+    throw "Деление на ноль не возможно";
   } else {
     if (isNaN(endV)) {
-      endV = "Ошибка";
+      throw "Ошибка";
     }
   }
 
@@ -208,9 +207,7 @@ export const squareRoot = (a) => {
 export const cubeRoot = (a) => {
   return root(a, 3);
 };
-export function current(a) {
-  return a.string || "0";
-}
+
 export function fact(number) {
   number = Math.round(number);
   if (number === 0) {
@@ -227,4 +224,13 @@ export function undoFunction(commands) {
     string: commands[commands.length - 1].string,
     openBrakets: commands[commands.length - 1].openBrakets,
   };
+}
+export function findOpenBrakets(string, calculator) {
+  calculator.openBrakets = [];
+  let index = 0;
+  while (string.slice(index).indexOf("(") !== -1) {
+    let open = string.slice(index).indexOf("(");
+    index = open + 1;
+    this.openBrakets.push(open);
+  }
 }

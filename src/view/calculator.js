@@ -13,6 +13,7 @@ import {
   UndoCommand,
 } from "../controller/commands";
 import "./calculator.css";
+import { findOpenBrakets } from "../controller/functions";
 
 export function calculatorHTML(calculator) {
   let wrapperDiv = document.createElement("div"),
@@ -37,8 +38,10 @@ export function calculatorHTML(calculator) {
   }
   buttonsNumber[0].element.classList.add("two_seat");
   function deleteSymbol() {
-    console.log("del");
     let stringArr = calculator.getString().split("");
+    if (stringArr[stringArr.length - 1] === "(") {
+      calculator.openBrakets.pop();
+    }
     stringArr.pop();
     if (stringArr.length === 0) {
       stringArr.push("0");
@@ -233,12 +236,12 @@ export function calculatorHTML(calculator) {
   wrapperCalculatorDiv.append(toggleWrapper);
   document.body.querySelector("main").append(wrapperDiv);
   let ctrl = false,
-    z = false;
+    z = false,
+    v = false;
   document.addEventListener("keydown", (event) => {
     if (event.keyCode === 8) {
       deleteSymbol();
     }
-    console.log(+event.key);
     if (/[0-9]/.test(event.key)) {
       buttonsNumber[event.key].element.click();
     }
@@ -287,6 +290,23 @@ export function calculatorHTML(calculator) {
     if (event.keyCode === 90) {
       z = true;
     }
+    if (event.keyCode === 86) {
+      v = true;
+    }
+    if (ctrl && v) {
+      navigator.clipboard
+        .readText()
+        .then((text) => {
+          if (text.split(/[-+^*/.()0-9]/).join("").length === 0)
+            calculator.setString(text);
+          findOpenBrakets(text, calculator);
+        })
+        .catch((err) => {
+          // возможно, пользователь не дал разрешение на чтение данных из буфера обмена
+          console.log("Something went wrong", err);
+        });
+      v = false;
+    }
     if (ctrl && z) {
       undo.element.click();
     }
@@ -297,6 +317,9 @@ export function calculatorHTML(calculator) {
     }
     if (event.keyCode === 90) {
       z = false;
+    }
+    if (event.keyCode === 86) {
+      v = false;
     }
   });
 }

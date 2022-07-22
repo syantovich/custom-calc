@@ -17,7 +17,7 @@ export class Button {
             }
           }
           calculator.execute(command);
-          if (this.value === "=") {
+          if (this.value === "=" && !isNaN(calculator.getString())) {
             const nextElemHist = document.createElement("div");
             nextElemHist.className = "history_element";
             nextElemHist.innerText =

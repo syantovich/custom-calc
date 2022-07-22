@@ -3,7 +3,6 @@ import {
   changeMark,
   cube,
   cubeRoot,
-  current,
   fact,
   oneDivX,
   percent,
@@ -16,7 +15,7 @@ import {
 class Command {
   constructor(execute, type, symbol, undo) {
     this.execute = execute;
-    this.undo = undo || current;
+    this.undo = undo;
     this.type = type;
     this.symbol = symbol;
   }
