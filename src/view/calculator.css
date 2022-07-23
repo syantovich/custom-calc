@@ -174,3 +174,58 @@
 .toggleWrapper input.toggle:checked + label:after {
   left: 11px;
 }
+@media all and (max-width: 991px) {
+  body {
+    margin: 0;
+  }
+  .wrapper_calc_calculator {
+    width: 50%;
+    min-width: 490px;
+    height: 100vh;
+  }
+  .history_calculator {
+    display: none !important;
+  }
+  .wrapper_calculator .string_calculator {
+    width: 100%;
+    min-height: calc(100vh * 3 / 8);
+  }
+  .wrapper_calculator button {
+    width: calc(100% / 7);
+    height: calc(100vh / 8);
+    font-size: calc(100vh / 38);
+  }
+  .buttons_calculator {
+    width: 100%;
+  }
+  .wrapper_calculator .undo {
+    width: 100px;
+    height: 30px;
+  }
+  .history_element {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 495px) {
+  .wrapper_calc_calculator {
+    width: 100% !important;
+    min-width: 100%;
+  }
+
+  .wrapper_calculator button {
+    width: calc(100% / 7);
+    height: calc(100vh / 8);
+    font-size: calc(100vw / 32);
+  }
+
+  .wrapper_calculator .num,
+  .wrapper_calculator .elementary {
+    font-size: calc(100vw / 16);
+  }
+  .wrapper_calculator .undo {
+    width: 40%;
+    height: 50px;
+    font-size: calc(100vw / 16);
+  }
+}
