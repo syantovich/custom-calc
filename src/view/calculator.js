@@ -13,7 +13,6 @@ import {
   UndoCommand,
 } from "../controller/commands";
 import "./calculator.css";
-import { findOpenBrakets } from "../controller/functions";
 
 export function calculatorHTML(calculator) {
   let wrapperDiv = document.createElement("div"),
@@ -278,7 +277,10 @@ export function calculatorHTML(calculator) {
         factorialButton.element.click();
         break;
       case "=":
-        equalsButton.element.click();
+        {
+          event.preventDefault();
+          equalsButton.element.click();
+        }
         break;
     }
     if (event.keyCode === 13) {
@@ -297,9 +299,18 @@ export function calculatorHTML(calculator) {
       navigator.clipboard
         .readText()
         .then((text) => {
-          if (text.split(/[-+^*/.()0-9]/).join("").length === 0)
-            calculator.setString(text);
-          findOpenBrakets(text, calculator);
+          let newText = "";
+          for (let i = 0; i < text.length; i++) {
+            if (/[0-9]/.test(text[i])) {
+              newText += text[i];
+            }
+            if (text[i] === "." || text[i] === ",") {
+              newText += ".";
+            }
+          }
+          console.log(newText);
+          calculator.setString(newText);
+          stringDiv.innerText = newText;
         })
         .catch((err) => {
           // возможно, пользователь не дал разрешение на чтение данных из буфера обмена

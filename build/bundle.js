@@ -1,97 +1,97 @@
 (() => {
   "use strict";
-  var e = {
-      579: (e, n, t) => {
-        t.d(n, { Z: () => c });
+  var n = {
+      579: (n, e, t) => {
+        t.d(e, { Z: () => c });
         var r = t(537),
           a = t.n(r),
           o = t(645),
           i = t.n(o)()(a());
         i.push([
-          e.id,
-          '.wrapper_calculator {\n  width: 100%;\n  color: white;\n  border-radius: 15px;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  height: 100%;\n  transition: color 0.5s ease-in-out;\n}\n.wrapper_calculator.dark {\n  color: black;\n}\n.wrapper_calc_calculator {\n  width: 28rem;\n  position: relative;\n}\n.history_calculator {\n  width: 28rem;\n  height: 32rem;\n  overflow-y: scroll;\n  overflow-x: hidden;\n  display: none;\n}\n.wrapper_calculator .history_calculator div:nth-child(even) {\n  background: rgb(90, 91, 92);\n  transition: background 0.5s ease-in-out;\n}\n.wrapper_calculator .history_calculator div:nth-child(odd) {\n  background: rgb(72, 73, 74);\n  transition: background 0.5s ease-in-out;\n}\n.wrapper_calculator.dark .history_calculator div:nth-child(even) {\n  background: rgb(231, 219, 219);\n}\n.wrapper_calculator.dark .history_calculator div:nth-child(odd) {\n  background: rgb(142, 161, 161);\n}\n.wrapper_calculator .visible {\n  display: block;\n}\n\n.wrapper_calculator .string_calculator {\n  width: 28rem;\n  min-height: 12rem;\n  background: rgb(72, 73, 74);\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: flex-end;\n  padding: 50px 20px;\n  box-sizing: border-box;\n  font-size: 2.5rem;\n  transition: background 0.5s ease-in-out;\n}\n.wrapper_calculator.dark .string_calculator {\n  background: rgb(241, 242, 243);\n}\n\n.wrapper_calculator button {\n  width: 4rem;\n  height: 4rem;\n  background: rgb(90, 91, 92);\n  border-collapse: collapse;\n  border: 0.4px rgb(72, 73, 74) solid;\n  box-sizing: border-box;\n  color: white;\n  font-size: 1rem;\n  transition: background 0.5s ease-in-out, color 0.5s ease-in-out;\n}\n.wrapper_calculator.dark button {\n  background: rgb(231, 219, 219);\n  color: black;\n}\n.wrapper_calculator .two_seat {\n  width: calc(200% / 7);\n}\n.wrapper_calculator .num {\n  background: rgb(117, 118, 119);\n}\n.wrapper_calculator.dark .num {\n  background: rgb(185, 233, 253);\n}\n.wrapper_calculator .elementary {\n  background: rgb(241, 162, 59);\n}\n.wrapper_calculator.dark .elementary {\n  background: rgb(107, 157, 203);\n}\n.buttons_calculator {\n  width: 28rem;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n}\n.wrapper_calculator .undo {\n  position: absolute;\n  width: 100px;\n  height: 30px;\n  border-radius: 80px;\n  box-sizing: border-box;\n  left: 5px;\n  top: 15px;\n}\n.history_element {\n  display: flex;\n  align-items: center;\n  width: 28rem;\n  height: calc(100% / 10);\n  font-size: 2rem;\n  padding-left: 2rem;\n  box-sizing: border-box;\n}\n.toggleWrapper {\n  position: absolute;\n  top: 15px;\n  right: 5px;\n}\n.toggleWrapper .darkMode {\n  position: absolute;\n  left: -100px;\n  top: 0;\n}\n.toggleWrapper input.toggle {\n  opacity: 0;\n  position: absolute;\n}\n.toggleWrapper input.toggle + label {\n  position: relative;\n  display: inline-block;\n  user-select: none;\n  -moz-transition: 0.4s ease;\n  -o-transition: 0.4s ease;\n  -webkit-transition: 0.4s ease;\n  transition: 0.4s ease;\n  -webkit-tap-highlight-color: transparent;\n  height: 30px;\n  width: 50px;\n  border-radius: 60px;\n}\n.toggleWrapper input.toggle + label:before {\n  content: "";\n  position: absolute;\n  display: block;\n  -moz-transition: 0.2s cubic-bezier(0.24, 0, 0.5, 1);\n  -o-transition: 0.2s cubic-bezier(0.24, 0, 0.5, 1);\n  -webkit-transition: 0.2s cubic-bezier(0.24, 0, 0.5, 1);\n  transition: 0.2s cubic-bezier(0.24, 0, 0.5, 1);\n  height: 15px;\n  width: 26px;\n  top: 0;\n  left: 0;\n  border-radius: 30px;\n  background: #bbbbbb;\n}\n.toggleWrapper input.toggle + label:after {\n  content: "";\n  position: absolute;\n  display: block;\n  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 0 0 rgba(0, 0, 0, 0.04),\n    0 4px 9px rgba(0, 0, 0, 0.13), 0 3px 3px rgba(0, 0, 0, 0.05);\n  transition: 0.35s cubic-bezier(0.54, 1.6, 0.5, 1);\n  background: #bbbbbb;\n  height: 14px;\n  width: 14px;\n  top: 1px;\n  left: 0;\n  border-radius: 60px;\n}\n.toggleWrapper input.toggle:checked + label:before {\n  background: #ffffff;\n  transition: width 0.2s cubic-bezier(0, 0, 0, 0.1);\n}\n.toggleWrapper input.toggle:checked + label:after {\n  left: 11px;\n}\n',
+          n.id,
+          '.wrapper_calculator {\n  width: 100%;\n  color: white;\n  border-radius: 15px;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  height: 100%;\n  transition: color 0.5s ease-in-out;\n}\n.wrapper_calculator.dark {\n  color: black;\n}\n.wrapper_calc_calculator {\n  width: 28rem;\n  position: relative;\n}\n.history_calculator {\n  width: 28rem;\n  height: 32rem;\n  overflow-y: scroll;\n  overflow-x: hidden;\n  display: none;\n}\n.wrapper_calculator .history_calculator div:nth-child(even) {\n  background: rgb(90, 91, 92);\n  transition: background 0.5s ease-in-out;\n}\n.wrapper_calculator .history_calculator div:nth-child(odd) {\n  background: rgb(72, 73, 74);\n  transition: background 0.5s ease-in-out;\n}\n.wrapper_calculator.dark .history_calculator div:nth-child(even) {\n  background: rgb(231, 219, 219);\n}\n.wrapper_calculator.dark .history_calculator div:nth-child(odd) {\n  background: rgb(142, 161, 161);\n}\n.wrapper_calculator .visible {\n  display: block;\n}\n\n.wrapper_calculator .string_calculator {\n  width: 28rem;\n  min-height: 12rem;\n  background: rgb(72, 73, 74);\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: flex-end;\n  padding: 50px 20px;\n  box-sizing: border-box;\n  font-size: 2.5rem;\n  transition: background 0.5s ease-in-out;\n}\n.wrapper_calculator.dark .string_calculator {\n  background: rgb(241, 242, 243);\n}\n\n.wrapper_calculator button {\n  width: 4rem;\n  height: 4rem;\n  background: rgb(90, 91, 92);\n  border-collapse: collapse;\n  border: 0.4px rgb(72, 73, 74) solid;\n  box-sizing: border-box;\n  color: white;\n  font-size: 1rem;\n  transition: background 0.5s ease-in-out, color 0.5s ease-in-out;\n}\n.wrapper_calculator.dark button {\n  background: rgb(231, 219, 219);\n  color: black;\n}\n.wrapper_calculator .two_seat {\n  width: calc(200% / 7);\n}\n.wrapper_calculator .num {\n  background: rgb(117, 118, 119);\n}\n.wrapper_calculator.dark .num {\n  background: rgb(185, 233, 253);\n}\n.wrapper_calculator .elementary {\n  background: rgb(241, 162, 59);\n}\n.wrapper_calculator.dark .elementary {\n  background: rgb(107, 157, 203);\n}\n.buttons_calculator {\n  width: 28rem;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n}\n.wrapper_calculator .undo {\n  position: absolute;\n  width: 100px;\n  height: 30px;\n  border-radius: 80px;\n  box-sizing: border-box;\n  left: 5px;\n  top: 15px;\n}\n.history_element {\n  display: flex;\n  align-items: center;\n  width: 28rem;\n  height: calc(100% / 10);\n  font-size: 2rem;\n  padding-left: 2rem;\n  box-sizing: border-box;\n}\n.toggleWrapper {\n  position: absolute;\n  top: 15px;\n  right: 5px;\n}\n.toggleWrapper .darkMode {\n  position: absolute;\n  left: -100px;\n  top: 0;\n}\n.toggleWrapper input.toggle {\n  opacity: 0;\n  position: absolute;\n}\n.toggleWrapper input.toggle + label {\n  position: relative;\n  display: inline-block;\n  user-select: none;\n  -moz-transition: 0.4s ease;\n  -o-transition: 0.4s ease;\n  -webkit-transition: 0.4s ease;\n  transition: 0.4s ease;\n  -webkit-tap-highlight-color: transparent;\n  height: 30px;\n  width: 50px;\n  border-radius: 60px;\n}\n.toggleWrapper input.toggle + label:before {\n  content: "";\n  position: absolute;\n  display: block;\n  -moz-transition: 0.2s cubic-bezier(0.24, 0, 0.5, 1);\n  -o-transition: 0.2s cubic-bezier(0.24, 0, 0.5, 1);\n  -webkit-transition: 0.2s cubic-bezier(0.24, 0, 0.5, 1);\n  transition: 0.2s cubic-bezier(0.24, 0, 0.5, 1);\n  height: 15px;\n  width: 26px;\n  top: 0;\n  left: 0;\n  border-radius: 30px;\n  background: #bbbbbb;\n}\n.toggleWrapper input.toggle + label:after {\n  content: "";\n  position: absolute;\n  display: block;\n  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 0 0 rgba(0, 0, 0, 0.04),\n    0 4px 9px rgba(0, 0, 0, 0.13), 0 3px 3px rgba(0, 0, 0, 0.05);\n  transition: 0.35s cubic-bezier(0.54, 1.6, 0.5, 1);\n  background: #bbbbbb;\n  height: 14px;\n  width: 14px;\n  top: 1px;\n  left: 0;\n  border-radius: 60px;\n}\n.toggleWrapper input.toggle:checked + label:before {\n  background: #ffffff;\n  transition: width 0.2s cubic-bezier(0, 0, 0, 0.1);\n}\n.toggleWrapper input.toggle:checked + label:after {\n  left: 11px;\n}\n@media all and (max-width: 991px) {\n  body {\n    margin: 0;\n  }\n  .wrapper_calc_calculator {\n    width: 50%;\n    min-width: 490px;\n    height: 100vh;\n  }\n  .history_calculator {\n    display: none !important;\n  }\n  .wrapper_calculator .string_calculator {\n    width: 100%;\n    min-height: calc(100vh * 3 / 8);\n  }\n  .wrapper_calculator button {\n    width: calc(100% / 7);\n    height: calc(100vh / 8);\n    font-size: calc(100vh / 38);\n  }\n  .buttons_calculator {\n    width: 100%;\n  }\n  .wrapper_calculator .undo {\n    width: 100px;\n    height: 30px;\n  }\n  .history_element {\n    width: 100%;\n  }\n}\n\n@media all and (max-width: 495px) {\n  .wrapper_calc_calculator {\n    width: 100% !important;\n    min-width: 100%;\n  }\n\n  .wrapper_calculator button {\n    width: calc(100% / 7);\n    height: calc(100vh / 8);\n    font-size: calc(100vw / 32);\n  }\n\n  .wrapper_calculator .num,\n  .wrapper_calculator .elementary {\n    font-size: calc(100vw / 16);\n  }\n  .wrapper_calculator .undo {\n    width: 40%;\n    height: 50px;\n    font-size: calc(100vw / 16);\n  }\n}\n',
           "",
           {
             version: 3,
             sources: ["webpack://./src/view/calculator.css"],
             names: [],
             mappings:
-              "AAAA;EACE,WAAW;EACX,YAAY;EACZ,mBAAmB;EACnB,aAAa;EACb,eAAe;EACf,uBAAuB;EACvB,YAAY;EACZ,kCAAkC;AACpC;AACA;EACE,YAAY;AACd;AACA;EACE,YAAY;EACZ,kBAAkB;AACpB;AACA;EACE,YAAY;EACZ,aAAa;EACb,kBAAkB;EAClB,kBAAkB;EAClB,aAAa;AACf;AACA;EACE,2BAA2B;EAC3B,uCAAuC;AACzC;AACA;EACE,2BAA2B;EAC3B,uCAAuC;AACzC;AACA;EACE,8BAA8B;AAChC;AACA;EACE,8BAA8B;AAChC;AACA;EACE,cAAc;AAChB;;AAEA;EACE,YAAY;EACZ,iBAAiB;EACjB,2BAA2B;EAC3B,aAAa;EACb,sBAAsB;EACtB,uBAAuB;EACvB,qBAAqB;EACrB,kBAAkB;EAClB,sBAAsB;EACtB,iBAAiB;EACjB,uCAAuC;AACzC;AACA;EACE,8BAA8B;AAChC;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,2BAA2B;EAC3B,yBAAyB;EACzB,mCAAmC;EACnC,sBAAsB;EACtB,YAAY;EACZ,eAAe;EACf,+DAA+D;AACjE;AACA;EACE,8BAA8B;EAC9B,YAAY;AACd;AACA;EACE,qBAAqB;AACvB;AACA;EACE,8BAA8B;AAChC;AACA;EACE,8BAA8B;AAChC;AACA;EACE,6BAA6B;AAC/B;AACA;EACE,8BAA8B;AAChC;AACA;EACE,YAAY;EACZ,aAAa;EACb,mBAAmB;EACnB,eAAe;AACjB;AACA;EACE,kBAAkB;EAClB,YAAY;EACZ,YAAY;EACZ,mBAAmB;EACnB,sBAAsB;EACtB,SAAS;EACT,SAAS;AACX;AACA;EACE,aAAa;EACb,mBAAmB;EACnB,YAAY;EACZ,uBAAuB;EACvB,eAAe;EACf,kBAAkB;EAClB,sBAAsB;AACxB;AACA;EACE,kBAAkB;EAClB,SAAS;EACT,UAAU;AACZ;AACA;EACE,kBAAkB;EAClB,YAAY;EACZ,MAAM;AACR;AACA;EACE,UAAU;EACV,kBAAkB;AACpB;AACA;EACE,kBAAkB;EAClB,qBAAqB;EACrB,iBAAiB;EACjB,0BAA0B;EAC1B,wBAAwB;EACxB,6BAA6B;EAC7B,qBAAqB;EACrB,wCAAwC;EACxC,YAAY;EACZ,WAAW;EACX,mBAAmB;AACrB;AACA;EACE,WAAW;EACX,kBAAkB;EAClB,cAAc;EACd,mDAAmD;EACnD,iDAAiD;EACjD,sDAAsD;EACtD,8CAA8C;EAC9C,YAAY;EACZ,WAAW;EACX,MAAM;EACN,OAAO;EACP,mBAAmB;EACnB,mBAAmB;AACrB;AACA;EACE,WAAW;EACX,kBAAkB;EAClB,cAAc;EACd;gEAC8D;EAC9D,iDAAiD;EACjD,mBAAmB;EACnB,YAAY;EACZ,WAAW;EACX,QAAQ;EACR,OAAO;EACP,mBAAmB;AACrB;AACA;EACE,mBAAmB;EACnB,iDAAiD;AACnD;AACA;EACE,UAAU;AACZ",
+              "AAAA;EACE,WAAW;EACX,YAAY;EACZ,mBAAmB;EACnB,aAAa;EACb,eAAe;EACf,uBAAuB;EACvB,YAAY;EACZ,kCAAkC;AACpC;AACA;EACE,YAAY;AACd;AACA;EACE,YAAY;EACZ,kBAAkB;AACpB;AACA;EACE,YAAY;EACZ,aAAa;EACb,kBAAkB;EAClB,kBAAkB;EAClB,aAAa;AACf;AACA;EACE,2BAA2B;EAC3B,uCAAuC;AACzC;AACA;EACE,2BAA2B;EAC3B,uCAAuC;AACzC;AACA;EACE,8BAA8B;AAChC;AACA;EACE,8BAA8B;AAChC;AACA;EACE,cAAc;AAChB;;AAEA;EACE,YAAY;EACZ,iBAAiB;EACjB,2BAA2B;EAC3B,aAAa;EACb,sBAAsB;EACtB,uBAAuB;EACvB,qBAAqB;EACrB,kBAAkB;EAClB,sBAAsB;EACtB,iBAAiB;EACjB,uCAAuC;AACzC;AACA;EACE,8BAA8B;AAChC;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,2BAA2B;EAC3B,yBAAyB;EACzB,mCAAmC;EACnC,sBAAsB;EACtB,YAAY;EACZ,eAAe;EACf,+DAA+D;AACjE;AACA;EACE,8BAA8B;EAC9B,YAAY;AACd;AACA;EACE,qBAAqB;AACvB;AACA;EACE,8BAA8B;AAChC;AACA;EACE,8BAA8B;AAChC;AACA;EACE,6BAA6B;AAC/B;AACA;EACE,8BAA8B;AAChC;AACA;EACE,YAAY;EACZ,aAAa;EACb,mBAAmB;EACnB,eAAe;AACjB;AACA;EACE,kBAAkB;EAClB,YAAY;EACZ,YAAY;EACZ,mBAAmB;EACnB,sBAAsB;EACtB,SAAS;EACT,SAAS;AACX;AACA;EACE,aAAa;EACb,mBAAmB;EACnB,YAAY;EACZ,uBAAuB;EACvB,eAAe;EACf,kBAAkB;EAClB,sBAAsB;AACxB;AACA;EACE,kBAAkB;EAClB,SAAS;EACT,UAAU;AACZ;AACA;EACE,kBAAkB;EAClB,YAAY;EACZ,MAAM;AACR;AACA;EACE,UAAU;EACV,kBAAkB;AACpB;AACA;EACE,kBAAkB;EAClB,qBAAqB;EACrB,iBAAiB;EACjB,0BAA0B;EAC1B,wBAAwB;EACxB,6BAA6B;EAC7B,qBAAqB;EACrB,wCAAwC;EACxC,YAAY;EACZ,WAAW;EACX,mBAAmB;AACrB;AACA;EACE,WAAW;EACX,kBAAkB;EAClB,cAAc;EACd,mDAAmD;EACnD,iDAAiD;EACjD,sDAAsD;EACtD,8CAA8C;EAC9C,YAAY;EACZ,WAAW;EACX,MAAM;EACN,OAAO;EACP,mBAAmB;EACnB,mBAAmB;AACrB;AACA;EACE,WAAW;EACX,kBAAkB;EAClB,cAAc;EACd;gEAC8D;EAC9D,iDAAiD;EACjD,mBAAmB;EACnB,YAAY;EACZ,WAAW;EACX,QAAQ;EACR,OAAO;EACP,mBAAmB;AACrB;AACA;EACE,mBAAmB;EACnB,iDAAiD;AACnD;AACA;EACE,UAAU;AACZ;AACA;EACE;IACE,SAAS;EACX;EACA;IACE,UAAU;IACV,gBAAgB;IAChB,aAAa;EACf;EACA;IACE,wBAAwB;EAC1B;EACA;IACE,WAAW;IACX,+BAA+B;EACjC;EACA;IACE,qBAAqB;IACrB,uBAAuB;IACvB,2BAA2B;EAC7B;EACA;IACE,WAAW;EACb;EACA;IACE,YAAY;IACZ,YAAY;EACd;EACA;IACE,WAAW;EACb;AACF;;AAEA;EACE;IACE,sBAAsB;IACtB,eAAe;EACjB;;EAEA;IACE,qBAAqB;IACrB,uBAAuB;IACvB,2BAA2B;EAC7B;;EAEA;;IAEE,2BAA2B;EAC7B;EACA;IACE,UAAU;IACV,YAAY;IACZ,2BAA2B;EAC7B;AACF",
             sourcesContent: [
-              '.wrapper_calculator {\n  width: 100%;\n  color: white;\n  border-radius: 15px;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  height: 100%;\n  transition: color 0.5s ease-in-out;\n}\n.wrapper_calculator.dark {\n  color: black;\n}\n.wrapper_calc_calculator {\n  width: 28rem;\n  position: relative;\n}\n.history_calculator {\n  width: 28rem;\n  height: 32rem;\n  overflow-y: scroll;\n  overflow-x: hidden;\n  display: none;\n}\n.wrapper_calculator .history_calculator div:nth-child(even) {\n  background: rgb(90, 91, 92);\n  transition: background 0.5s ease-in-out;\n}\n.wrapper_calculator .history_calculator div:nth-child(odd) {\n  background: rgb(72, 73, 74);\n  transition: background 0.5s ease-in-out;\n}\n.wrapper_calculator.dark .history_calculator div:nth-child(even) {\n  background: rgb(231, 219, 219);\n}\n.wrapper_calculator.dark .history_calculator div:nth-child(odd) {\n  background: rgb(142, 161, 161);\n}\n.wrapper_calculator .visible {\n  display: block;\n}\n\n.wrapper_calculator .string_calculator {\n  width: 28rem;\n  min-height: 12rem;\n  background: rgb(72, 73, 74);\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: flex-end;\n  padding: 50px 20px;\n  box-sizing: border-box;\n  font-size: 2.5rem;\n  transition: background 0.5s ease-in-out;\n}\n.wrapper_calculator.dark .string_calculator {\n  background: rgb(241, 242, 243);\n}\n\n.wrapper_calculator button {\n  width: 4rem;\n  height: 4rem;\n  background: rgb(90, 91, 92);\n  border-collapse: collapse;\n  border: 0.4px rgb(72, 73, 74) solid;\n  box-sizing: border-box;\n  color: white;\n  font-size: 1rem;\n  transition: background 0.5s ease-in-out, color 0.5s ease-in-out;\n}\n.wrapper_calculator.dark button {\n  background: rgb(231, 219, 219);\n  color: black;\n}\n.wrapper_calculator .two_seat {\n  width: calc(200% / 7);\n}\n.wrapper_calculator .num {\n  background: rgb(117, 118, 119);\n}\n.wrapper_calculator.dark .num {\n  background: rgb(185, 233, 253);\n}\n.wrapper_calculator .elementary {\n  background: rgb(241, 162, 59);\n}\n.wrapper_calculator.dark .elementary {\n  background: rgb(107, 157, 203);\n}\n.buttons_calculator {\n  width: 28rem;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n}\n.wrapper_calculator .undo {\n  position: absolute;\n  width: 100px;\n  height: 30px;\n  border-radius: 80px;\n  box-sizing: border-box;\n  left: 5px;\n  top: 15px;\n}\n.history_element {\n  display: flex;\n  align-items: center;\n  width: 28rem;\n  height: calc(100% / 10);\n  font-size: 2rem;\n  padding-left: 2rem;\n  box-sizing: border-box;\n}\n.toggleWrapper {\n  position: absolute;\n  top: 15px;\n  right: 5px;\n}\n.toggleWrapper .darkMode {\n  position: absolute;\n  left: -100px;\n  top: 0;\n}\n.toggleWrapper input.toggle {\n  opacity: 0;\n  position: absolute;\n}\n.toggleWrapper input.toggle + label {\n  position: relative;\n  display: inline-block;\n  user-select: none;\n  -moz-transition: 0.4s ease;\n  -o-transition: 0.4s ease;\n  -webkit-transition: 0.4s ease;\n  transition: 0.4s ease;\n  -webkit-tap-highlight-color: transparent;\n  height: 30px;\n  width: 50px;\n  border-radius: 60px;\n}\n.toggleWrapper input.toggle + label:before {\n  content: "";\n  position: absolute;\n  display: block;\n  -moz-transition: 0.2s cubic-bezier(0.24, 0, 0.5, 1);\n  -o-transition: 0.2s cubic-bezier(0.24, 0, 0.5, 1);\n  -webkit-transition: 0.2s cubic-bezier(0.24, 0, 0.5, 1);\n  transition: 0.2s cubic-bezier(0.24, 0, 0.5, 1);\n  height: 15px;\n  width: 26px;\n  top: 0;\n  left: 0;\n  border-radius: 30px;\n  background: #bbbbbb;\n}\n.toggleWrapper input.toggle + label:after {\n  content: "";\n  position: absolute;\n  display: block;\n  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 0 0 rgba(0, 0, 0, 0.04),\n    0 4px 9px rgba(0, 0, 0, 0.13), 0 3px 3px rgba(0, 0, 0, 0.05);\n  transition: 0.35s cubic-bezier(0.54, 1.6, 0.5, 1);\n  background: #bbbbbb;\n  height: 14px;\n  width: 14px;\n  top: 1px;\n  left: 0;\n  border-radius: 60px;\n}\n.toggleWrapper input.toggle:checked + label:before {\n  background: #ffffff;\n  transition: width 0.2s cubic-bezier(0, 0, 0, 0.1);\n}\n.toggleWrapper input.toggle:checked + label:after {\n  left: 11px;\n}\n',
+              '.wrapper_calculator {\n  width: 100%;\n  color: white;\n  border-radius: 15px;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  height: 100%;\n  transition: color 0.5s ease-in-out;\n}\n.wrapper_calculator.dark {\n  color: black;\n}\n.wrapper_calc_calculator {\n  width: 28rem;\n  position: relative;\n}\n.history_calculator {\n  width: 28rem;\n  height: 32rem;\n  overflow-y: scroll;\n  overflow-x: hidden;\n  display: none;\n}\n.wrapper_calculator .history_calculator div:nth-child(even) {\n  background: rgb(90, 91, 92);\n  transition: background 0.5s ease-in-out;\n}\n.wrapper_calculator .history_calculator div:nth-child(odd) {\n  background: rgb(72, 73, 74);\n  transition: background 0.5s ease-in-out;\n}\n.wrapper_calculator.dark .history_calculator div:nth-child(even) {\n  background: rgb(231, 219, 219);\n}\n.wrapper_calculator.dark .history_calculator div:nth-child(odd) {\n  background: rgb(142, 161, 161);\n}\n.wrapper_calculator .visible {\n  display: block;\n}\n\n.wrapper_calculator .string_calculator {\n  width: 28rem;\n  min-height: 12rem;\n  background: rgb(72, 73, 74);\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: flex-end;\n  padding: 50px 20px;\n  box-sizing: border-box;\n  font-size: 2.5rem;\n  transition: background 0.5s ease-in-out;\n}\n.wrapper_calculator.dark .string_calculator {\n  background: rgb(241, 242, 243);\n}\n\n.wrapper_calculator button {\n  width: 4rem;\n  height: 4rem;\n  background: rgb(90, 91, 92);\n  border-collapse: collapse;\n  border: 0.4px rgb(72, 73, 74) solid;\n  box-sizing: border-box;\n  color: white;\n  font-size: 1rem;\n  transition: background 0.5s ease-in-out, color 0.5s ease-in-out;\n}\n.wrapper_calculator.dark button {\n  background: rgb(231, 219, 219);\n  color: black;\n}\n.wrapper_calculator .two_seat {\n  width: calc(200% / 7);\n}\n.wrapper_calculator .num {\n  background: rgb(117, 118, 119);\n}\n.wrapper_calculator.dark .num {\n  background: rgb(185, 233, 253);\n}\n.wrapper_calculator .elementary {\n  background: rgb(241, 162, 59);\n}\n.wrapper_calculator.dark .elementary {\n  background: rgb(107, 157, 203);\n}\n.buttons_calculator {\n  width: 28rem;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n}\n.wrapper_calculator .undo {\n  position: absolute;\n  width: 100px;\n  height: 30px;\n  border-radius: 80px;\n  box-sizing: border-box;\n  left: 5px;\n  top: 15px;\n}\n.history_element {\n  display: flex;\n  align-items: center;\n  width: 28rem;\n  height: calc(100% / 10);\n  font-size: 2rem;\n  padding-left: 2rem;\n  box-sizing: border-box;\n}\n.toggleWrapper {\n  position: absolute;\n  top: 15px;\n  right: 5px;\n}\n.toggleWrapper .darkMode {\n  position: absolute;\n  left: -100px;\n  top: 0;\n}\n.toggleWrapper input.toggle {\n  opacity: 0;\n  position: absolute;\n}\n.toggleWrapper input.toggle + label {\n  position: relative;\n  display: inline-block;\n  user-select: none;\n  -moz-transition: 0.4s ease;\n  -o-transition: 0.4s ease;\n  -webkit-transition: 0.4s ease;\n  transition: 0.4s ease;\n  -webkit-tap-highlight-color: transparent;\n  height: 30px;\n  width: 50px;\n  border-radius: 60px;\n}\n.toggleWrapper input.toggle + label:before {\n  content: "";\n  position: absolute;\n  display: block;\n  -moz-transition: 0.2s cubic-bezier(0.24, 0, 0.5, 1);\n  -o-transition: 0.2s cubic-bezier(0.24, 0, 0.5, 1);\n  -webkit-transition: 0.2s cubic-bezier(0.24, 0, 0.5, 1);\n  transition: 0.2s cubic-bezier(0.24, 0, 0.5, 1);\n  height: 15px;\n  width: 26px;\n  top: 0;\n  left: 0;\n  border-radius: 30px;\n  background: #bbbbbb;\n}\n.toggleWrapper input.toggle + label:after {\n  content: "";\n  position: absolute;\n  display: block;\n  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 0 0 rgba(0, 0, 0, 0.04),\n    0 4px 9px rgba(0, 0, 0, 0.13), 0 3px 3px rgba(0, 0, 0, 0.05);\n  transition: 0.35s cubic-bezier(0.54, 1.6, 0.5, 1);\n  background: #bbbbbb;\n  height: 14px;\n  width: 14px;\n  top: 1px;\n  left: 0;\n  border-radius: 60px;\n}\n.toggleWrapper input.toggle:checked + label:before {\n  background: #ffffff;\n  transition: width 0.2s cubic-bezier(0, 0, 0, 0.1);\n}\n.toggleWrapper input.toggle:checked + label:after {\n  left: 11px;\n}\n@media all and (max-width: 991px) {\n  body {\n    margin: 0;\n  }\n  .wrapper_calc_calculator {\n    width: 50%;\n    min-width: 490px;\n    height: 100vh;\n  }\n  .history_calculator {\n    display: none !important;\n  }\n  .wrapper_calculator .string_calculator {\n    width: 100%;\n    min-height: calc(100vh * 3 / 8);\n  }\n  .wrapper_calculator button {\n    width: calc(100% / 7);\n    height: calc(100vh / 8);\n    font-size: calc(100vh / 38);\n  }\n  .buttons_calculator {\n    width: 100%;\n  }\n  .wrapper_calculator .undo {\n    width: 100px;\n    height: 30px;\n  }\n  .history_element {\n    width: 100%;\n  }\n}\n\n@media all and (max-width: 495px) {\n  .wrapper_calc_calculator {\n    width: 100% !important;\n    min-width: 100%;\n  }\n\n  .wrapper_calculator button {\n    width: calc(100% / 7);\n    height: calc(100vh / 8);\n    font-size: calc(100vw / 32);\n  }\n\n  .wrapper_calculator .num,\n  .wrapper_calculator .elementary {\n    font-size: calc(100vw / 16);\n  }\n  .wrapper_calculator .undo {\n    width: 40%;\n    height: 50px;\n    font-size: calc(100vw / 16);\n  }\n}\n',
             ],
             sourceRoot: "",
           },
         ]);
         const c = i;
       },
-      645: (e) => {
-        e.exports = function (e) {
-          var n = [];
+      645: (n) => {
+        n.exports = function (n) {
+          var e = [];
           return (
-            (n.toString = function () {
-              return this.map(function (n) {
+            (e.toString = function () {
+              return this.map(function (e) {
                 var t = "",
-                  r = void 0 !== n[5];
+                  r = void 0 !== e[5];
                 return (
-                  n[4] && (t += "@supports (".concat(n[4], ") {")),
-                  n[2] && (t += "@media ".concat(n[2], " {")),
+                  e[4] && (t += "@supports (".concat(e[4], ") {")),
+                  e[2] && (t += "@media ".concat(e[2], " {")),
                   r &&
                     (t += "@layer".concat(
-                      n[5].length > 0 ? " ".concat(n[5]) : "",
+                      e[5].length > 0 ? " ".concat(e[5]) : "",
                       " {"
                     )),
-                  (t += e(n)),
+                  (t += n(e)),
                   r && (t += "}"),
-                  n[2] && (t += "}"),
-                  n[4] && (t += "}"),
+                  e[2] && (t += "}"),
+                  e[4] && (t += "}"),
                   t
                 );
               }).join("");
             }),
-            (n.i = function (e, t, r, a, o) {
-              "string" == typeof e && (e = [[null, e, void 0]]);
+            (e.i = function (n, t, r, a, o) {
+              "string" == typeof n && (n = [[null, n, void 0]]);
               var i = {};
               if (r)
                 for (var c = 0; c < this.length; c++) {
                   var l = this[c][0];
                   null != l && (i[l] = !0);
                 }
-              for (var s = 0; s < e.length; s++) {
-                var p = [].concat(e[s]);
-                (r && i[p[0]]) ||
+              for (var s = 0; s < n.length; s++) {
+                var A = [].concat(n[s]);
+                (r && i[A[0]]) ||
                   (void 0 !== o &&
-                    (void 0 === p[5] ||
-                      (p[1] = "@layer"
-                        .concat(p[5].length > 0 ? " ".concat(p[5]) : "", " {")
-                        .concat(p[1], "}")),
-                    (p[5] = o)),
+                    (void 0 === A[5] ||
+                      (A[1] = "@layer"
+                        .concat(A[5].length > 0 ? " ".concat(A[5]) : "", " {")
+                        .concat(A[1], "}")),
+                    (A[5] = o)),
                   t &&
-                    (p[2]
-                      ? ((p[1] = "@media "
-                          .concat(p[2], " {")
-                          .concat(p[1], "}")),
-                        (p[2] = t))
-                      : (p[2] = t)),
+                    (A[2]
+                      ? ((A[1] = "@media "
+                          .concat(A[2], " {")
+                          .concat(A[1], "}")),
+                        (A[2] = t))
+                      : (A[2] = t)),
                   a &&
-                    (p[4]
-                      ? ((p[1] = "@supports ("
-                          .concat(p[4], ") {")
-                          .concat(p[1], "}")),
-                        (p[4] = a))
-                      : (p[4] = "".concat(a))),
-                  n.push(p));
+                    (A[4]
+                      ? ((A[1] = "@supports ("
+                          .concat(A[4], ") {")
+                          .concat(A[1], "}")),
+                        (A[4] = a))
+                      : (A[4] = "".concat(a))),
+                  e.push(A));
               }
             }),
-            n
+            e
           );
         };
       },
-      537: (e) => {
-        e.exports = function (e) {
-          var n = e[1],
-            t = e[3];
-          if (!t) return n;
+      537: (n) => {
+        n.exports = function (n) {
+          var e = n[1],
+            t = n[3];
+          if (!t) return e;
           if ("function" == typeof btoa) {
             var r = btoa(unescape(encodeURIComponent(JSON.stringify(t)))),
               a =
@@ -99,34 +99,34 @@
                   r
                 ),
               o = "/*# ".concat(a, " */"),
-              i = t.sources.map(function (e) {
+              i = t.sources.map(function (n) {
                 return "/*# sourceURL="
                   .concat(t.sourceRoot || "")
-                  .concat(e, " */");
+                  .concat(n, " */");
               });
-            return [n].concat(i).concat([o]).join("\n");
+            return [e].concat(i).concat([o]).join("\n");
           }
-          return [n].join("\n");
+          return [e].join("\n");
         };
       },
-      379: (e) => {
-        var n = [];
-        function t(e) {
-          for (var t = -1, r = 0; r < n.length; r++)
-            if (n[r].identifier === e) {
+      379: (n) => {
+        var e = [];
+        function t(n) {
+          for (var t = -1, r = 0; r < e.length; r++)
+            if (e[r].identifier === n) {
               t = r;
               break;
             }
           return t;
         }
-        function r(e, r) {
-          for (var o = {}, i = [], c = 0; c < e.length; c++) {
-            var l = e[c],
+        function r(n, r) {
+          for (var o = {}, i = [], c = 0; c < n.length; c++) {
+            var l = n[c],
               s = r.base ? l[0] + r.base : l[0],
-              p = o[s] || 0,
-              u = "".concat(s, " ").concat(p);
-            o[s] = p + 1;
-            var A = t(u),
+              A = o[s] || 0,
+              p = "".concat(s, " ").concat(A);
+            o[s] = A + 1;
+            var u = t(p),
               d = {
                 css: l[1],
                 media: l[2],
@@ -134,70 +134,70 @@
                 supports: l[4],
                 layer: l[5],
               };
-            if (-1 !== A) n[A].references++, n[A].updater(d);
+            if (-1 !== u) e[u].references++, e[u].updater(d);
             else {
-              var g = a(d, r);
+              var h = a(d, r);
               (r.byIndex = c),
-                n.splice(c, 0, { identifier: u, updater: g, references: 1 });
+                e.splice(c, 0, { identifier: p, updater: h, references: 1 });
             }
-            i.push(u);
+            i.push(p);
           }
           return i;
         }
-        function a(e, n) {
-          var t = n.domAPI(n);
+        function a(n, e) {
+          var t = e.domAPI(e);
           return (
-            t.update(e),
-            function (n) {
-              if (n) {
+            t.update(n),
+            function (e) {
+              if (e) {
                 if (
-                  n.css === e.css &&
-                  n.media === e.media &&
-                  n.sourceMap === e.sourceMap &&
-                  n.supports === e.supports &&
-                  n.layer === e.layer
+                  e.css === n.css &&
+                  e.media === n.media &&
+                  e.sourceMap === n.sourceMap &&
+                  e.supports === n.supports &&
+                  e.layer === n.layer
                 )
                   return;
-                t.update((e = n));
+                t.update((n = e));
               } else t.remove();
             }
           );
         }
-        e.exports = function (e, a) {
-          var o = r((e = e || []), (a = a || {}));
-          return function (e) {
-            e = e || [];
+        n.exports = function (n, a) {
+          var o = r((n = n || []), (a = a || {}));
+          return function (n) {
+            n = n || [];
             for (var i = 0; i < o.length; i++) {
               var c = t(o[i]);
-              n[c].references--;
+              e[c].references--;
             }
-            for (var l = r(e, a), s = 0; s < o.length; s++) {
-              var p = t(o[s]);
-              0 === n[p].references && (n[p].updater(), n.splice(p, 1));
+            for (var l = r(n, a), s = 0; s < o.length; s++) {
+              var A = t(o[s]);
+              0 === e[A].references && (e[A].updater(), e.splice(A, 1));
             }
             o = l;
           };
         };
       },
-      569: (e) => {
-        var n = {};
-        e.exports = function (e, t) {
-          var r = (function (e) {
-            if (void 0 === n[e]) {
-              var t = document.querySelector(e);
+      569: (n) => {
+        var e = {};
+        n.exports = function (n, t) {
+          var r = (function (n) {
+            if (void 0 === e[n]) {
+              var t = document.querySelector(n);
               if (
                 window.HTMLIFrameElement &&
                 t instanceof window.HTMLIFrameElement
               )
                 try {
                   t = t.contentDocument.head;
-                } catch (e) {
+                } catch (n) {
                   t = null;
                 }
-              n[e] = t;
+              e[n] = t;
             }
-            return n[e];
-          })(e);
+            return e[n];
+          })(n);
           if (!r)
             throw new Error(
               "Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid."
@@ -205,24 +205,24 @@
           r.appendChild(t);
         };
       },
-      216: (e) => {
-        e.exports = function (e) {
-          var n = document.createElement("style");
-          return e.setAttributes(n, e.attributes), e.insert(n, e.options), n;
+      216: (n) => {
+        n.exports = function (n) {
+          var e = document.createElement("style");
+          return n.setAttributes(e, n.attributes), n.insert(e, n.options), e;
         };
       },
-      565: (e, n, t) => {
-        e.exports = function (e) {
-          var n = t.nc;
-          n && e.setAttribute("nonce", n);
+      565: (n, e, t) => {
+        n.exports = function (n) {
+          var e = t.nc;
+          e && n.setAttribute("nonce", e);
         };
       },
-      795: (e) => {
-        e.exports = function (e) {
-          var n = e.insertStyleElement(e);
+      795: (n) => {
+        n.exports = function (n) {
+          var e = n.insertStyleElement(n);
           return {
             update: function (t) {
-              !(function (e, n, t) {
+              !(function (n, e, t) {
                 var r = "";
                 t.supports && (r += "@supports (".concat(t.supports, ") {")),
                   t.media && (r += "@media ".concat(t.media, " {"));
@@ -244,49 +244,49 @@
                       btoa(unescape(encodeURIComponent(JSON.stringify(o)))),
                       " */"
                     )),
-                  n.styleTagTransform(r, e, n.options);
-              })(n, e, t);
+                  e.styleTagTransform(r, n, e.options);
+              })(e, n, t);
             },
             remove: function () {
-              !(function (e) {
-                if (null === e.parentNode) return !1;
-                e.parentNode.removeChild(e);
-              })(n);
+              !(function (n) {
+                if (null === n.parentNode) return !1;
+                n.parentNode.removeChild(n);
+              })(e);
             },
           };
         };
       },
-      589: (e) => {
-        e.exports = function (e, n) {
-          if (n.styleSheet) n.styleSheet.cssText = e;
+      589: (n) => {
+        n.exports = function (n, e) {
+          if (e.styleSheet) e.styleSheet.cssText = n;
           else {
-            for (; n.firstChild; ) n.removeChild(n.firstChild);
-            n.appendChild(document.createTextNode(e));
+            for (; e.firstChild; ) e.removeChild(e.firstChild);
+            e.appendChild(document.createTextNode(n));
           }
         };
       },
     },
-    n = {};
+    e = {};
   function t(r) {
-    var a = n[r];
+    var a = e[r];
     if (void 0 !== a) return a.exports;
-    var o = (n[r] = { id: r, exports: {} });
-    return e[r](o, o.exports, t), o.exports;
+    var o = (e[r] = { id: r, exports: {} });
+    return n[r](o, o.exports, t), o.exports;
   }
-  (t.n = (e) => {
-    var n = e && e.__esModule ? () => e.default : () => e;
-    return t.d(n, { a: n }), n;
+  (t.n = (n) => {
+    var e = n && n.__esModule ? () => n.default : () => n;
+    return t.d(e, { a: e }), e;
   }),
-    (t.d = (e, n) => {
-      for (var r in n)
-        t.o(n, r) &&
-          !t.o(e, r) &&
-          Object.defineProperty(e, r, { enumerable: !0, get: n[r] });
+    (t.d = (n, e) => {
+      for (var r in e)
+        t.o(e, r) &&
+          !t.o(n, r) &&
+          Object.defineProperty(n, r, { enumerable: !0, get: e[r] });
     }),
-    (t.o = (e, n) => Object.prototype.hasOwnProperty.call(e, n)),
+    (t.o = (n, e) => Object.prototype.hasOwnProperty.call(n, e)),
     (t.nc = void 0),
     (() => {
-      function e(n) {
+      function n(e) {
         for (
           var t = {
               0: !0,
@@ -306,201 +306,201 @@
             },
             r = { "(": !0, ")": !0, "*": !0, "/": !0, " ": !0, "^": !0 },
             a = 0;
-          a < n.length;
+          a < e.length;
           a++
         )
-          if (!(n[a] in t) && !(n[a] in r))
+          if (!(e[a] in t) && !(e[a] in r))
             throw "В строке содержаться недопустимые символы!";
-        n = n.split(" ").join("").split("");
-        for (var o = 0, i = 0, c = 0; c < n.length; c++)
-          if (("(" === n[c] && o++, ")" === n[c] && i++, o < i))
+        e = e.split(" ").join("").split("");
+        for (var o = 0, i = 0, c = 0; c < e.length; c++)
+          if (("(" === e[c] && o++, ")" === e[c] && i++, o < i))
             throw "Проверьте скобки";
         if (o !== i) throw "Проверьте скобки";
-        for (var l = 0; l < n.length; l++)
-          n[l] in r && (n.splice(l, 0, "!"), n.splice(l + 2, 0, "!"), (l += 2)),
-            "-" === n[l] &&
-              "e" !== n[l - 1] &&
-              (n.splice(l, 0, "!"),
-              "(" === n[l + 2] && (n.splice(l + 2, 0, "!"), l++),
+        for (var l = 0; l < e.length; l++)
+          e[l] in r && (e.splice(l, 0, "!"), e.splice(l + 2, 0, "!"), (l += 2)),
+            "-" === e[l] &&
+              "e" !== e[l - 1] &&
+              (e.splice(l, 0, "!"),
+              "(" === e[l + 2] && (e.splice(l + 2, 0, "!"), l++),
               l++),
-            "+" === n[l] && "e" !== n[l - 1] && (n.splice(l, 0, "!"), l++);
-        n = n.join("").split("!");
-        for (var s = 0; s < n.length; s++) "" === n[s] && (n.splice(s, 1), s--);
-        for (; -1 !== n.indexOf("("); )
-          if (((o = n.indexOf("(")), (i = n.length), -1 !== o)) {
+            "+" === e[l] && "e" !== e[l - 1] && (e.splice(l, 0, "!"), l++);
+        e = e.join("").split("!");
+        for (var s = 0; s < e.length; s++) "" === e[s] && (e.splice(s, 1), s--);
+        for (; -1 !== e.indexOf("("); )
+          if (((o = e.indexOf("(")), (i = e.length), -1 !== o)) {
             i = o;
-            for (var p = 1; 0 !== p; )
-              "(" === n[++i] && p++, ")" === n[i] && p--;
-            var u = e(n.slice(o + 1, i).join(""));
+            for (var A = 1; 0 !== A; )
+              "(" === e[++i] && A++, ")" === e[i] && A--;
+            var p = n(e.slice(o + 1, i).join(""));
             if (
-              (/[0-9]/.test(n[o - 1]) && (n.splice(o, 0, "*"), o++),
-              "Ошибка" === u)
+              (/[0-9]/.test(e[o - 1]) && (e.splice(o, 0, "*"), o++),
+              "Ошибка" === p)
             )
-              throw u;
+              throw p;
             o--,
-              n.splice(o + 1, i - o + 2, u),
-              "-" === n[o]
-                ? ((n[o + 1] *= -1), n.splice(o, 1))
-                : "+" === n[o] && n.splice(o, 1);
+              e.splice(o + 1, i - o + 2, p),
+              "-" === e[o]
+                ? ((e[o + 1] *= -1), e.splice(o, 1))
+                : "+" === e[o] && e.splice(o, 1);
           } else o = 0;
-        var A = 0,
-          d = n.join("").split(/[*/^]/).join("");
-        if (n.join("").split(/[0-9]/).join("").length >= d.length)
+        var u = 0,
+          d = e.join("").split(/[*/^]/).join("");
+        if (e.join("").split(/[0-9]/).join("").length >= d.length)
           throw "Ошибка";
-        for (; -1 !== n.indexOf("^"); )
-          for (var g = 0; g < n.length; g++)
-            "^" === n[g] &&
-              ((A = Math.pow(parseFloat(n[g - 1]), parseFloat(n[g + 1]))),
-              n.splice(g - 1, 3, "".concat(A)),
-              (g -= 1));
-        for (; -1 !== n.indexOf("*") || -1 !== n.indexOf("/"); )
-          for (var h = 0; h < n.length; h++) {
-            var b = n[h];
+        for (; -1 !== e.indexOf("^"); )
+          for (var h = 0; h < e.length; h++)
+            "^" === e[h] &&
+              ((u = Math.pow(parseFloat(e[h - 1]), parseFloat(e[h + 1]))),
+              e.splice(h - 1, 3, "".concat(u)),
+              (h -= 1));
+        for (; -1 !== e.indexOf("*") || -1 !== e.indexOf("/"); )
+          for (var g = 0; g < e.length; g++) {
+            var b = e[g];
             "*" === b &&
-              ((A = parseFloat(n[h - 1]) * parseFloat(n[h + 1])),
-              n.splice(h - 1, 3, "".concat(A)),
-              (h -= 1)),
+              ((u = parseFloat(e[g - 1]) * parseFloat(e[g + 1])),
+              e.splice(g - 1, 3, "".concat(u)),
+              (g -= 1)),
               "/" === b &&
-                ((A = parseFloat(n[h - 1]) / parseFloat(n[h + 1])),
-                n.splice(h - 1, 3, "".concat(A)),
-                (h -= 1));
+                ((u = parseFloat(e[g - 1]) / parseFloat(e[g + 1])),
+                e.splice(g - 1, 3, "".concat(u)),
+                (g -= 1));
           }
-        A = 0;
-        for (var m = 0; m < n.length; m++) A += parseFloat(n[m]);
-        if ((A = parseFloat(A.toPrecision(12))) === 1 / 0 || A === -1 / 0)
+        u = 0;
+        for (var m = 0; m < e.length; m++) u += parseFloat(e[m]);
+        if ((u = parseFloat(u.toPrecision(12))) === 1 / 0 || u === -1 / 0)
           throw "Деление на ноль не возможно";
-        if (isNaN(A)) throw "Ошибка";
-        return "".concat(A);
+        if (isNaN(u)) throw "Ошибка";
+        return "".concat(u);
       }
-      var n = function (e, n) {
-          return (e * n) / 100;
+      var e = function (n, e) {
+          return (n * e) / 100;
         },
-        r = function (e) {
-          return e < 0 ? "+".concat(-1 * e) : -1 * e;
+        r = function (n) {
+          return n < 0 ? "+".concat(-1 * n) : -1 * n;
         },
-        a = function (n, t) {
-          var r = e("".concat(n, "^").concat(t));
+        a = function (e, t) {
+          var r = n("".concat(e, "^").concat(t));
           return r >= 0 ? "+".concat(r) : "".concat(r);
         },
-        o = function (e) {
-          return a(e, 2);
+        o = function (n) {
+          return a(n, 2);
         },
-        i = function (e) {
-          return a(e, 3);
+        i = function (n) {
+          return a(n, 3);
         },
-        c = function (e) {
-          return a(10, e);
+        c = function (n) {
+          return a(10, n);
         },
-        l = function (e) {
-          return e >= 0 ? "+".concat(1 / e) : 1 / e;
+        l = function (n) {
+          return n >= 0 ? "+".concat(1 / n) : 1 / n;
         },
-        s = function (e, n) {
-          return a(e, 1 / n);
+        s = function (n, e) {
+          return a(n, 1 / e);
         },
-        p = function (e) {
-          return s(e, 2);
+        A = function (n) {
+          return s(n, 2);
         },
-        u = function (e) {
-          return s(e, 3);
+        p = function (n) {
+          return s(n, 3);
         };
-      function A(e) {
-        return 0 === (e = Math.round(e)) ? 1 : e * A(e - 1);
+      function u(n) {
+        return 0 === (n = Math.round(n)) ? 1 : n * u(n - 1);
       }
-      function d(e, n) {
-        return e + "".concat(n);
+      function d(n, e) {
+        return n + "".concat(e);
       }
-      function g(e) {
+      function h(n) {
         return {
-          string: e[e.length - 1].string,
-          openBrakets: e[e.length - 1].openBrakets,
+          string: n[n.length - 1].string,
+          openBrakets: n[n.length - 1].openBrakets,
         };
       }
-      function h(e, n) {
-        n.openBrakets = [];
-        for (var t = 0; -1 !== e.slice(t).indexOf("("); ) {
-          var r = e.slice(t).indexOf("(");
+      function g(n, e) {
+        e.openBrakets = [];
+        for (var t = 0; -1 !== n.slice(t).indexOf("("); ) {
+          var r = n.slice(t).indexOf("(");
           (t = r + 1), this.openBrakets.push(r);
         }
       }
-      function b(e, n) {
-        for (var t = 0; t < n.length; t++) {
-          var r = n[t];
+      function b(n, e) {
+        for (var t = 0; t < e.length; t++) {
+          var r = e[t];
           (r.enumerable = r.enumerable || !1),
             (r.configurable = !0),
             "value" in r && (r.writable = !0),
-            Object.defineProperty(e, r.key, r);
+            Object.defineProperty(n, r.key, r);
         }
       }
-      function m(e, n, t) {
+      function m(n, e, t) {
         return (
-          n && b(e.prototype, n),
-          t && b(e, t),
-          Object.defineProperty(e, "prototype", { writable: !1 }),
-          e
+          e && b(n.prototype, e),
+          t && b(n, t),
+          Object.defineProperty(n, "prototype", { writable: !1 }),
+          n
         );
       }
-      var f = m(function e(n, t, r, a) {
-          !(function (e, n) {
-            if (!(e instanceof n))
+      var f = m(function n(e, t, r, a) {
+          !(function (n, e) {
+            if (!(n instanceof e))
               throw new TypeError("Cannot call a class as a function");
-          })(this, e),
-            (this.execute = n),
+          })(this, n),
+            (this.execute = e),
             (this.undo = a),
             (this.type = t),
             (this.symbol = r);
         }),
         C = "calculate string",
-        k = "calculate action",
-        w = "calculate percent";
-      function B(n) {
-        return new f(e, C, n);
+        w = "calculate action",
+        E = "calculate percent";
+      function B(e) {
+        return new f(n, C, e);
       }
-      function E() {
-        return new f(n, w, "%");
+      function k() {
+        return new f(e, E, "%");
       }
       function x() {
-        return new f(r, k, "+/-");
+        return new f(r, w, "+/-");
       }
       function v() {
-        return new f(o, k, "^2");
+        return new f(o, w, "^2");
       }
       function y() {
-        return new f(i, k, "^3");
+        return new f(i, w, "^3");
       }
       function _() {
-        return new f(c, k, "10^");
+        return new f(c, w, "10^");
+      }
+      function I() {
+        return new f(l, w, "1/");
       }
       function S() {
-        return new f(l, k, "1/");
-      }
-      function j() {
-        return new f(p, k, "^(1/2)");
+        return new f(A, w, "^(1/2)");
       }
       function W() {
-        return new f(u, k, "^(1/3)");
+        return new f(p, w, "^(1/3)");
       }
-      function M() {
-        return new f(A, k, "!");
+      function j() {
+        return new f(u, w, "!");
       }
-      function Y() {
-        return new f(null, null, null, g);
+      function z() {
+        return new f(null, null, null, h);
       }
-      function z(e, n) {
-        for (var t = 0; t < n.length; t++) {
-          var r = n[t];
+      function Y(n, e) {
+        for (var t = 0; t < e.length; t++) {
+          var r = e[t];
           (r.enumerable = r.enumerable || !1),
             (r.configurable = !0),
             "value" in r && (r.writable = !0),
-            Object.defineProperty(e, r.key, r);
+            Object.defineProperty(n, r.key, r);
         }
       }
-      var I = (function () {
-        function e() {
-          var n = this;
-          !(function (e, n) {
-            if (!(e instanceof n))
+      var M = (function () {
+        function n() {
+          var e = this;
+          !(function (n, e) {
+            if (!(n instanceof e))
               throw new TypeError("Cannot call a class as a function");
-          })(this, e),
+          })(this, n),
             (this.current = 0),
             (this.commands = []),
             (this.openBrakets = []),
@@ -509,105 +509,105 @@
           var t = "0",
             r = !1;
           (this.next = void 0),
-            (this.setString = function (e) {
-              t = e;
+            (this.setString = function (n) {
+              t = n;
             }),
             (this.getString = function () {
               return t;
             }),
-            (this.changeIsEdit = function (e) {
-              r = e;
+            (this.changeIsEdit = function (n) {
+              r = n;
             }),
             (this.getIsEddit = function () {
               return r;
             }),
-            (this.execute = function (e) {
-              if (n.openBrakets.length < 0) return !1;
+            (this.execute = function (n) {
+              if (e.openBrakets.length < 0) return !1;
               try {
-                switch (e.type) {
+                switch (n.type) {
                   case C:
-                    n.calculateString(e, t);
-                    break;
-                  case k:
-                    n.calculateAction(e, t);
+                    e.calculateString(n, t);
                     break;
                   case w:
-                    n.calculatePercent(e, t);
+                    e.calculateAction(n, t);
+                    break;
+                  case E:
+                    e.calculatePercent(n, t);
                 }
                 if (2 === t.split(/[-^/(+*]/).length && "+" === t[0]) {
                   var r = t.split("");
                   r.shift(), (t = r.join(""));
                 }
-              } catch (e) {
-                n.setString(e), (n.openBrakets = []);
+              } catch (n) {
+                e.setString(n), (e.openBrakets = []);
               }
-              (n.next = void 0), n.changeIsEdit(!1);
+              return (e.next = void 0), e.changeIsEdit(!1), t;
             }),
-            (this.undo = function (e) {
-              if (n.commands.length) {
-                n.changeIsEdit(!0);
-                var t = e.undo(n.commands);
-                t.string && (h(t.string, n), n.setString(t.string)),
-                  n.commands.pop();
+            (this.undo = function (n) {
+              if (e.commands.length) {
+                e.changeIsEdit(!0);
+                var t = n.undo(e.commands);
+                t.string && (g(t.string, e), e.setString(t.string)),
+                  e.commands.pop();
               }
             });
         }
-        var n, t;
+        var e, t;
         return (
-          (n = e),
+          (e = n),
           (t = [
             {
               key: "calculateString",
-              value: function (e, n) {
-                if ("M+" !== e.symbol && "M-" !== e.symbol) {
+              value: function (n, e) {
+                if ("M+" !== n.symbol && "M-" !== n.symbol) {
                   this.commands.push({
                     openBrakets: this.openBrakets,
-                    command: e,
-                    string: n,
+                    command: n,
+                    string: e,
                   });
-                  var t = n,
+                  var t = e,
                     r = this.openBrakets.length;
-                  ")" === e.symbol ||
-                  ("=" === e.symbol && this.openBrakets.length)
-                    ? (this.current = e.execute(
+                  ")" === n.symbol ||
+                  ("=" === n.symbol && this.openBrakets.length)
+                    ? (this.current = n.execute(
                         "".concat(
-                          n.slice(this.getIndex(), "".concat(n).length),
+                          e.slice(this.getIndex(), "".concat(e).length),
                           ")"
                         )
                       ))
-                    : (this.current = e.execute(
-                        n.slice(this.getIndex(), "".concat(n).length)
+                    : (this.current = n.execute(
+                        e.slice(this.getIndex(), "".concat(e).length)
                       ));
-                  var a = n.split("");
-                  if (/[.0-9]/.test(n[this.getIndex() - 1]))
+                  var a = e.split("");
+                  if (/[.0-9]/.test(e[this.getIndex() - 1]))
                     a.splice(
                       this.getIndex(),
-                      "".concat(n).length,
+                      "".concat(e).length,
                       "*".concat(this.current)
                     );
-                  else if (/[-+]/.test(n[this.getIndex() - 1])) {
+                  else if (/[-+]/.test(e[this.getIndex() - 1])) {
                     var o =
-                      "".concat(n[this.getIndex() - 1], "1") * this.current;
+                      "".concat(e[this.getIndex() - 1], "1") * this.current;
                     a.splice(
                       this.getIndex() - 1,
-                      "".concat(n).length,
+                      "".concat(e).length,
                       o.toString()
                     );
                   } else
                     a.splice(
                       this.getIndex(),
-                      "".concat(n).length,
+                      "".concat(e).length,
                       this.current
                     );
-                  if ((this.setString(a.join("")), "=" === e.symbol)) {
+                  if ((this.setString(a.join("")), "=" === n.symbol)) {
                     for (var i = 0; i < r; i++) t += ")";
                     this.history.push("".concat(t, " = ").concat(a.join("")));
                   }
                   return !0;
                 }
-                if (0 === this.findIndexWithMark(n.length - 1, n)) {
-                  var c = +"".concat(e.symbol[1], "1") * +n;
-                  this.memory = e.execute(
+                if (0 === this.findIndexWithMark(e.length - 1, e)) {
+                  var c = +"".concat(n.symbol[1], "1") * +e;
+                  this.memory = n.execute(
                     ""
                       .concat(this.memory)
                       .concat(c >= 0 ? "+" : "")
@@ -618,53 +618,53 @@
             },
             {
               key: "calculateAction",
-              value: function (e, n) {
+              value: function (n, e) {
                 this.commands.push({
                   openBrakets: this.openBrakets,
-                  command: e,
-                  string: n,
+                  command: n,
+                  string: e,
                 });
-                var t = n.length - 1;
-                if (!/[0-9]/.test(n[t])) throw "Выполнить действие невозможно";
-                t = this.findIndexWithMark(t, n);
-                var r = n.split("");
+                var t = e.length - 1;
+                if (!/[0-9]/.test(e[t])) throw "Выполнить действие невозможно";
+                t = this.findIndexWithMark(t, e);
+                var r = e.split("");
                 try {
                   return (
-                    (this.next = e.execute(
-                      +r.slice(t, "".concat(n).length).join("")
+                    (this.next = n.execute(
+                      +r.slice(t, "".concat(e).length).join("")
                     )),
-                    r.splice(t, "".concat(n).length, this.next),
+                    r.splice(t, "".concat(e).length, this.next),
                     this.setString(r.join("")),
                     !0
                   );
-                } catch (e) {
+                } catch (n) {
                   throw "Неверный ввод";
                 }
               },
             },
             {
               key: "calculatePercent",
-              value: function (e, n) {
+              value: function (n, e) {
                 var t,
-                  r = this.findIndexWithMark(n.length - 1, n, !0);
+                  r = this.findIndexWithMark(e.length - 1, e, !0);
                 if (
-                  (/[*/]/.test(n[r - 1])
-                    ? ((t = this.findIndexWithMark(r - 2, n)),
-                      (this.current = n.slice(t, r - 1)))
-                    : ((t = this.findIndexWithMark(r - 2, n)),
-                      (this.current = n.slice(t, r))),
+                  (/[*/]/.test(e[r - 1])
+                    ? ((t = this.findIndexWithMark(r - 2, e)),
+                      (this.current = e.slice(t, r - 1)))
+                    : ((t = this.findIndexWithMark(r - 2, e)),
+                      (this.current = e.slice(t, r))),
                   !1 === t)
                 )
                   throw "You need to write some action";
-                (this.next = n.slice(r)),
-                  (this.next = e.execute(+this.current, +this.next)),
+                (this.next = e.slice(r)),
+                  (this.next = n.execute(+this.current, +this.next)),
                   this.commands.push({
                     openBrakets: this.openBrakets,
-                    command: e,
-                    string: n,
+                    command: n,
+                    string: e,
                   });
-                var a = n.split("");
-                a.splice(r, "".concat(n).length, this.next),
+                var a = e.split("");
+                a.splice(r, "".concat(e).length, this.next),
                   this.setString(a.join(""));
               },
             },
@@ -678,13 +678,13 @@
             },
             {
               key: "findIndexWithMark",
-              value: function (e, n, t) {
-                if (!e) return !1;
-                for (var r = !0, a = e; a > 0 && r; ) {
-                  if ("(" === n[a] && t) return !1;
-                  if (/[*/(]/.test(n[a])) return (r = a++), a;
-                  "+" === n[a] || "-" === n[a]
-                    ? "e" === n[a - 1]
+              value: function (n, e, t) {
+                if (!n) return !1;
+                for (var r = !0, a = n; a > 0 && r; ) {
+                  if ("(" === e[a] && t) return !1;
+                  if (/[*/(]/.test(e[a])) return (r = a++), a;
+                  "+" === e[a] || "-" === e[a]
+                    ? "e" === e[a - 1]
                       ? (a -= 2)
                       : (r = !1)
                     : a--;
@@ -692,36 +692,36 @@
                 return a;
               },
             },
-          ]) && z(n.prototype, t),
-          Object.defineProperty(n, "prototype", { writable: !1 }),
-          e
+          ]) && Y(e.prototype, t),
+          Object.defineProperty(e, "prototype", { writable: !1 }),
+          n
         );
       })();
-      function O(e, n) {
-        for (var t = 0; t < n.length; t++) {
-          var r = n[t];
+      function O(n, e) {
+        for (var t = 0; t < e.length; t++) {
+          var r = e[t];
           (r.enumerable = r.enumerable || !1),
             (r.configurable = !0),
             "value" in r && (r.writable = !0),
-            Object.defineProperty(e, r.key, r);
+            Object.defineProperty(n, r.key, r);
         }
       }
-      function Z(e, n, t) {
+      function Z(n, e, t) {
         return (
-          n && O(e.prototype, n),
-          t && O(e, t),
-          Object.defineProperty(e, "prototype", { writable: !1 }),
-          e
+          e && O(n.prototype, e),
+          t && O(n, t),
+          Object.defineProperty(n, "prototype", { writable: !1 }),
+          n
         );
       }
-      var T = Z(function e(n, t, r, a, o, i) {
+      var T = Z(function n(e, t, r, a, o, i) {
           var c = this;
-          !(function (e, n) {
-            if (!(e instanceof n))
+          !(function (n, e) {
+            if (!(n instanceof e))
               throw new TypeError("Cannot call a class as a function");
-          })(this, e),
+          })(this, n),
             (this.areaResult = o),
-            (this.value = n);
+            (this.value = e);
           var l = document.createElement("button");
           (l.innerText = this.value),
             (l.className = t),
@@ -734,15 +734,15 @@
                   if (
                     (r.execute(a), "=" === c.value && !isNaN(r.getString()))
                   ) {
-                    var e = document.createElement("div");
-                    (e.className = "history_element"),
-                      (e.innerText = r.history[r.history.length - 1]);
+                    var n = document.createElement("div");
+                    (n.className = "history_element"),
+                      (n.innerText = r.history[r.history.length - 1]);
                     var o = i.firstChild;
-                    i.classList.add("visible"), i.insertBefore(e, o);
+                    i.classList.add("visible"), i.insertBefore(n, o);
                   }
                   break;
                 case "number":
-                  "x^(1/y)" === n &&
+                  "x^(1/y)" === e &&
                     ((c.value = "^(1/"),
                     r.openBrakets.push(r.getString().length + 1)),
                     r.getIsEddit()
@@ -769,13 +769,13 @@
                     r.openBrakets.pop();
                   break;
                 case "memory":
-                  "AC" === n && (r.setString("0"), r.changeIsEdit(!1)),
-                    "MC" === n && (r.memory = 0),
-                    "MR" === n &&
+                  "AC" === e && (r.setString("0"), r.changeIsEdit(!1)),
+                    "MC" === e && (r.memory = 0),
+                    "MR" === e &&
                       (r.setString(r.memory),
                       (r.openBrakets = []),
                       r.changeIsEdit(!1)),
-                    ("M+" !== n && "M-" !== n) || r.execute(a);
+                    ("M+" !== e && "M-" !== e) || r.execute(a);
                   break;
                 case "undo":
                   r.undo(a);
@@ -794,110 +794,110 @@
         q = t(565),
         F = t.n(q),
         X = t(216),
-        H = t.n(X),
-        J = t(589),
-        Q = t.n(J),
-        V = t(579),
+        V = t.n(X),
+        H = t(589),
+        J = t.n(H),
+        Q = t(579),
         G = {};
-      (G.styleTagTransform = Q()),
+      (G.styleTagTransform = J()),
         (G.setAttributes = F()),
         (G.insert = U().bind(null, "head")),
         (G.domAPI = P()),
-        (G.insertStyleElement = H()),
-        L()(V.Z, G),
-        V.Z && V.Z.locals && V.Z.locals,
-        (function (e) {
-          var n = document.createElement("div"),
+        (G.insertStyleElement = V()),
+        L()(Q.Z, G),
+        Q.Z && Q.Z.locals && Q.Z.locals,
+        (function (n) {
+          var e = document.createElement("div"),
             t = document.createElement("div"),
             r = document.createElement("div"),
             a = document.createElement("div"),
             o = document.createElement("div"),
             i = [];
-          (n.className = "wrapper_calculator"),
+          (e.className = "wrapper_calculator"),
             (r.className = "string_calculator"),
-            (r.innerText = e.getString()),
+            (r.innerText = n.getString()),
             (a.className = "history_calculator"),
             (o.className = "buttons_calculator"),
             (t.className = "wrapper_calc_calculator"),
             (T.prototype.areaResult = r);
           for (var c = 0; c < 10; c++)
-            i.push(new T(c, "number", e, null, r)),
+            i.push(new T(c, "number", n, null, r)),
               i[c].element.classList.add("num");
           i[0].element.classList.add("two_seat");
           var l = document.createElement("div");
           (l.innerText = "Темная тема"), (l.className = "darkMode");
           var s = document.createElement("div");
           s.classList.add("toggleWrapper");
-          var p = document.createElement("input");
-          (p.type = "checkbox"),
-            (p.name = "toggle"),
-            (p.id = "toggle"),
-            (p.checked = !0),
-            (p.className = "toggle");
-          var u = document.createElement("label");
-          (u.for = "toggle"),
+          var A = document.createElement("input");
+          (A.type = "checkbox"),
+            (A.name = "toggle"),
+            (A.id = "toggle"),
+            (A.checked = !0),
+            (A.className = "toggle");
+          var p = document.createElement("label");
+          (p.for = "toggle"),
             s.append(l),
+            s.append(A),
             s.append(p),
-            s.append(u),
             s.addEventListener("click", function () {
-              (p.checked = !p.checked), n.classList.toggle("dark");
+              (A.checked = !A.checked), e.classList.toggle("dark");
             });
-          var A = new T("+", "number", e, null, r),
-            d = new T("-", "number", e, null, r),
-            g = new T("*", "number", e, null, r),
-            b = new T(".", "number", e, null, r),
-            m = new T("/", "number", e, null, r),
-            f = new T("^", "number", e, null, r),
-            C = new T("%", "action", e, new E(), r),
-            k = new T("+/-", "action", e, new x(), r),
-            w = new T("x^2", "action", e, new v(), r),
-            z = new T("x^3", "action", e, new y(), r),
-            I = new T("10^x", "action", e, new _(), r),
-            O = new T("1/x", "action", e, new S(), r),
-            Z = new T("x^(1/y)", "number", e, null, r),
-            D = new T("x^(1/2)", "action", e, new j(), r),
-            L = new T("x^(1/3)", "action", e, new W(), r),
-            N = new T("!", "action", e, new M(), r),
-            P = new T("=", "action", e, new B("="), r, a),
-            R = new T("(", "bracketOpen", e, null, r),
-            U = new T(")", "bracketClose", e, new B(")"), r),
-            q = new T("MC", "memory", e),
-            F = new T("MR", "memory", e, null, r),
-            X = new T("M+", "memory", e, new B("M+")),
-            H = new T("M-", "memory", e, new B("M-")),
-            J = new T("AC", "memory", e, null, r);
+          var u = new T("+", "number", n, null, r),
+            d = new T("-", "number", n, null, r),
+            h = new T("*", "number", n, null, r),
+            b = new T(".", "number", n, null, r),
+            m = new T("/", "number", n, null, r),
+            f = new T("^", "number", n, null, r),
+            C = new T("%", "action", n, new k(), r),
+            w = new T("+/-", "action", n, new x(), r),
+            E = new T("x^2", "action", n, new v(), r),
+            Y = new T("x^3", "action", n, new y(), r),
+            M = new T("10^x", "action", n, new _(), r),
+            O = new T("1/x", "action", n, new I(), r),
+            Z = new T("x^(1/y)", "number", n, null, r),
+            D = new T("x^(1/2)", "action", n, new S(), r),
+            L = new T("x^(1/3)", "action", n, new W(), r),
+            N = new T("!", "action", n, new j(), r),
+            P = new T("=", "action", n, new B("="), r, a),
+            R = new T("(", "bracketOpen", n, null, r),
+            U = new T(")", "bracketClose", n, new B(")"), r),
+            q = new T("MC", "memory", n),
+            F = new T("MR", "memory", n, null, r),
+            X = new T("M+", "memory", n, new B("M+")),
+            V = new T("M-", "memory", n, new B("M-")),
+            H = new T("AC", "memory", n, null, r);
           o.append(R.element),
             o.append(U.element),
             o.append(q.element),
-            o.append(J.element),
-            o.append(k.element),
+            o.append(H.element),
+            o.append(w.element),
             o.append(C.element),
             m.element.classList.add("elementary"),
             o.append(m.element),
             o.append(X.element),
-            o.append(H.element),
+            o.append(V.element),
             o.append(F.element),
             o.append(i[7].element),
             o.append(i[8].element),
             o.append(i[9].element),
-            g.element.classList.add("elementary"),
-            o.append(g.element),
-            o.append(w.element),
-            o.append(z.element),
+            h.element.classList.add("elementary"),
+            o.append(h.element),
+            o.append(E.element),
+            o.append(Y.element),
             o.append(f.element),
             o.append(i[4].element),
             o.append(i[5].element),
             o.append(i[6].element),
             d.element.classList.add("elementary"),
             o.append(d.element),
-            o.append(I.element),
+            o.append(M.element),
             o.append(O.element),
             o.append(Z.element),
             o.append(i[1].element),
             o.append(i[2].element),
             o.append(i[3].element),
-            A.element.classList.add("elementary"),
-            o.append(A.element),
+            u.element.classList.add("elementary"),
+            o.append(u.element),
             o.append(D.element),
             o.append(L.element),
             o.append(N.element),
@@ -906,38 +906,38 @@
             o.append(b.element),
             P.element.classList.add("elementary"),
             o.append(P.element);
-          var Q = new T("Вернуть", "undo", e, new Y(), r);
+          var J = new T("Вернуть", "undo", n, new z(), r);
           t.append(r),
             t.append(o),
-            n.append(t),
-            n.append(a),
-            t.append(Q.element),
+            e.append(t),
+            e.append(a),
+            t.append(J.element),
             t.append(s),
-            document.body.querySelector("main").append(n);
-          var V = !1,
+            document.body.querySelector("main").append(e);
+          var Q = !1,
             G = !1,
             K = !1;
-          document.addEventListener("keydown", function (n) {
+          document.addEventListener("keydown", function (e) {
             var t;
             switch (
-              (8 === n.keyCode &&
-                ("(" === (t = e.getString().split(""))[t.length - 1] &&
-                  e.openBrakets.pop(),
+              (8 === e.keyCode &&
+                ("(" === (t = n.getString().split(""))[t.length - 1] &&
+                  n.openBrakets.pop(),
                 t.pop(),
-                0 === t.length && (t.push("0"), e.changeIsEdit(!1)),
-                e.setString(t.join("")),
+                0 === t.length && (t.push("0"), n.changeIsEdit(!1)),
+                n.setString(t.join("")),
                 (r.innerText = t.join(""))),
-              /[0-9]/.test(n.key) && i[n.key].element.click(),
-              n.key)
+              /[0-9]/.test(e.key) && i[e.key].element.click(),
+              e.key)
             ) {
               case "+":
-                A.element.click();
+                u.element.click();
                 break;
               case "-":
                 d.element.click();
                 break;
               case "*":
-                g.element.click();
+                h.element.click();
                 break;
               case ".":
                 b.element.click();
@@ -963,31 +963,31 @@
               case "=":
                 P.element.click();
             }
-            13 === n.keyCode && P.element.click(),
-              17 === n.keyCode && (V = !0),
-              90 === n.keyCode && (G = !0),
-              86 === n.keyCode && (K = !0),
-              V &&
+            13 === e.keyCode && P.element.click(),
+              17 === e.keyCode && (Q = !0),
+              90 === e.keyCode && (G = !0),
+              86 === e.keyCode && (K = !0),
+              Q &&
                 K &&
                 (navigator.clipboard
                   .readText()
-                  .then(function (n) {
-                    0 === n.split(/[-+^*/.()0-9]/).join("").length &&
-                      e.setString(n),
-                      h(n, e);
+                  .then(function (e) {
+                    0 === e.split(/[-+^*/.()0-9]/).join("").length &&
+                      n.setString(e),
+                      g(e, n);
                   })
-                  .catch(function (e) {
-                    console.log("Something went wrong", e);
+                  .catch(function (n) {
+                    console.log("Something went wrong", n);
                   }),
                 (K = !1)),
-              V && G && Q.element.click();
+              Q && G && J.element.click();
           }),
-            document.addEventListener("keyup", function (e) {
-              17 === e.keyCode && (V = !1),
-                90 === e.keyCode && (G = !1),
-                86 === e.keyCode && (K = !1);
+            document.addEventListener("keyup", function (n) {
+              17 === n.keyCode && (Q = !1),
+                90 === n.keyCode && (G = !1),
+                86 === n.keyCode && (K = !1);
             });
-        })(new I());
+        })(new M());
     })();
 })();
 //# sourceMappingURL=bundle.js.map

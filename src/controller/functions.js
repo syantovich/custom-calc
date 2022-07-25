@@ -123,7 +123,9 @@ export function calc(str) {
   while (str.indexOf("^") !== -1) {
     for (let i = 0; i < str.length; i++) {
       if (str[i] === "^") {
+        console.log(pow);
         endV = parseFloat(str[i - 1]) ** parseFloat(str[i + 1]);
+        endV = endV.toPrecision(14);
         str.splice(i - 1, 3, `${endV}`);
         i -= 1;
       }
@@ -135,6 +137,7 @@ export function calc(str) {
       if (sim === "*") {
         endV = parseFloat(str[i - 1]) * parseFloat(str[i + 1]);
         str.splice(i - 1, 3, `${endV}`);
+        endV = endV.toPrecision(14);
         i -= 1;
       }
       if (sim === "/") {
@@ -150,7 +153,8 @@ export function calc(str) {
     let el = parseFloat(str[i]);
     endV = endV + el;
   }
-  endV = parseFloat(endV.toPrecision(12));
+  console.log(endV);
+  endV = parseFloat(endV.toFixed(14));
   if (endV === Infinity || endV === -Infinity) {
     throw "Деление на ноль не возможно";
   } else {
@@ -162,8 +166,12 @@ export function calc(str) {
   return `${endV}`;
 }
 
-export const percent = (a, b) => {
-  return (a * b) / 100;
+export const percent = (a, b, isPlus) => {
+  let result = (a * b) / 100;
+  if (result >= 0 && isPlus) {
+    return `+${result}`;
+  }
+  return result;
 };
 
 export const changeMark = (a) => {
@@ -213,7 +221,7 @@ export function fact(number) {
   if (number === 0) {
     return 1;
   } else {
-    return number * fact(number - 1);
+    return `+${number * fact(number - 1)}`;
   }
 }
 export function addToString(string, el) {

@@ -40,7 +40,7 @@ export class Calculator {
             this.calculatePercent(command, string);
         }
 
-        if (string.split(/[-^/(+*]/).length === 2 && string[0] === "+") {
+        if (string[0] === "+") {
           let newString = string.split("");
           newString.shift();
           string = newString.join("");
@@ -51,6 +51,7 @@ export class Calculator {
       }
       this.next = undefined;
       this.changeIsEdit(false);
+      return string;
     };
     this.undo = (command) => {
       if (this.commands.length) {
@@ -151,23 +152,28 @@ export class Calculator {
     }
   }
   calculatePercent(command, string) {
+    if (!/[0-9]/.test(string[string.length - 1])) {
+      throw "You need to write some action";
+    }
     let firstIndex = this.findIndexWithMark(string.length - 1, string, true);
-    let index;
+    let index,
+      isPlus = false;
+
     if (/[*/]/.test(string[firstIndex - 1])) {
       index = this.findIndexWithMark(firstIndex - 2, string);
       this.current = string.slice(index, firstIndex - 1);
     } else {
-      index = this.findIndexWithMark(firstIndex - 2, string);
+      index = this.findIndexWithMark(firstIndex - 1, string);
       this.current = string.slice(index, firstIndex);
+      isPlus = true;
     }
 
-    if (index === false) {
+    if (index === -1 || firstIndex === 0) {
       throw "You need to write some action";
     }
 
     this.next = string.slice(firstIndex);
-
-    this.next = command.execute(+this.current, +this.next);
+    this.next = command.execute(+this.current, +this.next, isPlus);
     this.commands.push({
       openBrakets: this.openBrakets,
       command,
@@ -203,6 +209,7 @@ export class Calculator {
             index -= 2;
           } else {
             isContinue = false;
+            return index;
           }
         } else {
           index--;
