@@ -1,4 +1,4 @@
-#Custom Calculator
+# Custom Calculator
 
 ### Features
 
@@ -25,7 +25,7 @@
 
 ---
 
-###To install all project, enter the command
+### To install all project, enter the command
 
 `$git clone https://github.com/syantovich/custom-calc.git`
 
@@ -38,6 +38,6 @@ To run tests `$npm run test`
 
 -----
 
-###To use the calculator without downloading, use [website application](https://syantovich.github.io/custom-calc.io/)
+### To use the calculator without downloading, use [website application](https://syantovich.github.io/custom-calc.io/)
 
 [`https://syantovich.github.io/custom-calc.io/`](https://syantovich.github.io/custom-calc.io/)
