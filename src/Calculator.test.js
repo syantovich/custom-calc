@@ -108,7 +108,7 @@ test("testing CubeCommand", () => {
   );
   expect(calculatorUseCommand("3", new CubeCommand())).toBe("27");
 });
-test("CubeRootCommand", () => {
+test("testing CubeRootCommand", () => {
   expect(calculatorUseCommand("27", new CubeRootCommand())).toBe("3");
   expect(calculatorUseCommand("5.2145", new CubeRootCommand())).toBe(
     "1.7340870325134"
@@ -121,9 +121,6 @@ test("CubeRootCommand", () => {
   );
   expect(calculatorUseCommand("92504856803176", new CubeRootCommand())).toBe(
     "45226"
-  );
-  expect(calculatorUseCommand("-92504856803176", new CubeRootCommand())).toBe(
-    "Неверный ввод"
   );
 });
 test("testing Fact", () => {
@@ -202,4 +199,30 @@ test("testing squareRootCommand", () => {
   expect(calculatorUseCommand("-4*2", new SquareRootCommand())).toBe(
     "-4*+1.4142135623731"
   );
+});
+test("testing 10^x", () => {
+  expect(calculatorUseCommand("3", new TenPowXCommand())).toBe("1000");
+  expect(calculatorUseCommand("3+4", new TenPowXCommand())).toBe("3+10000");
+  expect(calculatorUseCommand("3.5", new TenPowXCommand())).toBe(
+    "3162.2776601684"
+  );
+  expect(calculatorUseCommand("3*+4", new TenPowXCommand())).toBe("3*+10000");
+  expect(calculatorUseCommand("3//+4", new TenPowXCommand())).toBe("3//+10000");
+  expect(calculatorUseCommand("3^^^^^^+4", new TenPowXCommand())).toBe(
+    "3^^^^^^+10000"
+  );
+});
+test("testing undo", () => {
+  expect(calculator.undo(new UndoCommand())).toBe("3^^^^^^+4");
+  expect(calculator.undo(new UndoCommand())).toBe("3//+4");
+  expect(calculator.undo(new UndoCommand())).toBe("3*+4");
+  expect(calculator.undo(new UndoCommand())).toBe("3.5");
+  expect(calculator.undo(new UndoCommand())).toBe("3+4");
+  expect(calculator.undo(new UndoCommand())).toBe("3");
+  expect(calculator.undo(new UndoCommand())).toBe("-4*2");
+  expect(calculator.undo(new UndoCommand())).toBe("-4");
+  expect(calculator.undo(new UndoCommand())).toBe("4308.6096");
+  expect(calculator.undo(new UndoCommand())).toBe("6.041764");
+  expect(calculator.undo(new UndoCommand())).toBe("121");
+  expect(calculator.undo(new UndoCommand())).toBe("2");
 });

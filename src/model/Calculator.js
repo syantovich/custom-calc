@@ -63,6 +63,7 @@ export class Calculator {
         }
         this.commands.pop();
       }
+      return string;
     };
   }
   calculateString(command, string) {
