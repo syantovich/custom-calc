@@ -239,6 +239,6 @@ export function findOpenBrakets(string, calculator) {
   while (string.slice(index).indexOf("(") !== -1) {
     let open = string.slice(index).indexOf("(");
     index = open + 1;
-    this.openBrakets.push(open);
+    calculator.openBrakets.push(open);
   }
 }

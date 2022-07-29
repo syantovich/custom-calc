@@ -111,8 +111,9 @@ export class Button {
             }
             if (value === "MR") {
               if (calculator.getIsEddit()) {
+                calculator.openBrakets.push(calculator.getString().length);
                 calculator.setString(
-                  addToString(calculator.getString(), `(${calculator.memory})`)
+                  addToString(calculator.getString(), `(${calculator.memory}`)
                 );
               } else {
                 calculator.setString(calculator.memory);
