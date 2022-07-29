@@ -103,7 +103,14 @@ export class Calculator {
         );
       } else {
         if (/[-+]/.test(string[this.getIndex() - 1])) {
-          let newCurrent = `${string[this.getIndex() - 1]}1` * this.current;
+          let newCurrent =
+            string[this.getIndex() - 1] === "+"
+              ? this.current >= 0
+                ? `+${this.current}`
+                : `-${this.current}`
+              : this.current >= 0
+              ? `-${this.current}`
+              : `+${this.current.toString().slice(1)}`;
           newString.splice(
             this.getIndex() - 1,
             `${string}`.length,
