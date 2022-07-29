@@ -565,7 +565,7 @@
                     e.openBrakets = [];
                     for (var t = 0; -1 !== n.slice(t).indexOf("("); ) {
                       var r = n.slice(t).indexOf("(");
-                      (t = r + 1), this.openBrakets.push(r);
+                      (t = r + 1), e.openBrakets.push(r);
                     }
                   })(r.string, e),
                   e.setString(r.string)),
@@ -802,9 +802,8 @@
                     "MC" === e && (r.memory = 0),
                     "MR" === e &&
                       (r.getIsEddit()
-                        ? r.setString(
-                            d(r.getString(), "(".concat(r.memory, ")"))
-                          )
+                        ? (r.openBrakets.push(r.getString().length),
+                          r.setString(d(r.getString(), "(".concat(r.memory))))
                         : (r.setString(r.memory), (r.openBrakets = [])),
                       (n = { status: "ok" })),
                     "M+" === e || "M-" === e)

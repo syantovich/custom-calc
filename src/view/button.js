@@ -44,18 +44,14 @@ export class Button {
             calculator.openBrakets.push(calculator.getString().length + 1);
           }
           if (calculator.getIsEddit()) {
-            calculator.setString(
-              addToString(calculator.getString(), this.value)
-            );
+            this.addingWithsymbol(calculator);
             result = { status: "ok" };
           } else {
             if (
               !/[.0-9]/.test(this.value) &&
               /[0-9]/.test(calculator.getString())
             ) {
-              calculator.setString(
-                addToString(calculator.getString(), this.value)
-              );
+              this.addingWithsymbol(calculator);
               result = { status: "ok" };
               calculator.changeIsEdit(true);
             } else {
@@ -146,5 +142,35 @@ export class Button {
     });
     this.element = div;
     this.type = className;
+  }
+  addingWithsymbol(calculator) {
+    if (/[-+*/^]/.test(this.value) && this.value.length === 1) {
+      if (
+        /[-+*/^]/.test(
+          calculator.getString()[calculator.getString().length - 1]
+        )
+      ) {
+        calculator.setString(
+          addToString(
+            calculator.getString().slice(0, calculator.getString().length - 1),
+            this.value
+          )
+        );
+      } else {
+        calculator.setString(addToString(calculator.getString(), this.value));
+      }
+    } else {
+      if (this.value === ".") {
+        let string = calculator.getString();
+        let index = calculator.findIndexWithMark(string.length - 1, string);
+        let newString = string.slice(index);
+        if (newString.indexOf(".") === -1) {
+          calculator.setString(addToString(string, this.value));
+        }
+      } else {
+        console.log(addToString(calculator.getString(), this.value));
+        calculator.setString(addToString(calculator.getString(), this.value));
+      }
+    }
   }
 }
