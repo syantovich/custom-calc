@@ -28,6 +28,7 @@ export class Calculator {
       if (this.openBrakets.length < 0) {
         return false;
       }
+      let currString = string;
       try {
         switch (command.type) {
           case types.calcString:
@@ -45,13 +46,22 @@ export class Calculator {
           newString.shift();
           string = newString.join("");
         }
+        this.changeIsEdit(false);
+        this.commands.push({
+          openBrakets: this.openBrakets,
+          command,
+          currString,
+        });
+        if (command.symbol !== "M+" && command.symbol !== "M-") {
+          return { status: "ok", string };
+        } else {
+          return { status: "ok", string: this.memory };
+        }
       } catch (e) {
-        this.setString(e);
-        this.openBrakets = [];
+        // this.setString(e);
+        return { status: "error", string: e };
+        // this.openBrakets = [];
       }
-      this.next = undefined;
-      this.changeIsEdit(false);
-      return string;
     };
     this.undo = (command) => {
       if (this.commands.length) {
@@ -68,11 +78,6 @@ export class Calculator {
   }
   calculateString(command, string) {
     if (command.symbol !== "M+" && command.symbol !== "M-") {
-      this.commands.push({
-        openBrakets: this.openBrakets,
-        command,
-        string,
-      });
       let oldString = string;
       const lengthOpenBrackets = this.openBrakets.length;
 
@@ -118,21 +123,23 @@ export class Calculator {
       }
       return true;
     } else {
-      let index = this.findIndexWithMark(string.length - 1, string);
+      let index;
+      if (string.length === 1 && /[0-9]/.test(string)) {
+        index = 0;
+      } else {
+        index = this.findIndexWithMark(string.length - 1, string);
+      }
+
       if (index === 0) {
         let value = +`${command.symbol[1]}1` * +string;
         this.memory = command.execute(
           `${this.memory}${value >= 0 ? "+" : ""}${value}`
         );
+        console.log(this.memory);
       }
     }
   }
   calculateAction(command, string) {
-    this.commands.push({
-      openBrakets: this.openBrakets,
-      command,
-      string,
-    });
     let index = string.length - 1;
 
     if (/[0-9]/.test(string[index])) {
@@ -175,11 +182,6 @@ export class Calculator {
 
     this.next = string.slice(firstIndex);
     this.next = command.execute(+this.current, +this.next, isPlus);
-    this.commands.push({
-      openBrakets: this.openBrakets,
-      command,
-      string,
-    });
     let newString = string.split("");
     newString.splice(firstIndex, `${string}`.length, this.next);
     this.setString(newString.join(""));

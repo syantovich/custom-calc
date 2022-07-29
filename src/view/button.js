@@ -1,22 +1,31 @@
 import { addToString } from "../controller/functions";
 
 export class Button {
-  constructor(value, className, calculator, command, areaResult, areaHistory) {
+  constructor(
+    value,
+    className,
+    calculator,
+    command,
+    areaResult,
+    areaError,
+    areaHistory
+  ) {
     this.areaResult = areaResult;
     this.value = value;
     let div = document.createElement("button");
     div.innerText = this.value;
     div.className = className;
     div.addEventListener("click", () => {
+      let result;
       switch (className) {
         case "action": {
           if (this.value === "=") {
             while (calculator.openBrakets.length !== 0) {
-              calculator.execute(command);
+              result = calculator.execute(command);
               calculator.openBrakets.pop();
             }
           }
-          calculator.execute(command);
+          result = calculator.execute(command);
           if (this.value === "=" && !isNaN(calculator.getString())) {
             const nextElemHist = document.createElement("div");
             nextElemHist.className = "history_element";
@@ -38,6 +47,7 @@ export class Button {
             calculator.setString(
               addToString(calculator.getString(), this.value)
             );
+            result = { status: "ok" };
           } else {
             if (
               !/[.0-9]/.test(this.value) &&
@@ -46,10 +56,12 @@ export class Button {
               calculator.setString(
                 addToString(calculator.getString(), this.value)
               );
+              result = { status: "ok" };
               calculator.changeIsEdit(true);
             } else {
               calculator.changeIsEdit(true);
               calculator.setString(`${this.value}`);
+              result = { status: "ok" };
             }
           }
           break;
@@ -67,10 +79,12 @@ export class Button {
             calculator.setString(
               addToString(calculator.getString(), this.value)
             );
+            result = { status: "ok" };
           } else {
             calculator.openBrakets = [];
             calculator.openBrakets.push(0);
             calculator.setString(this.value);
+            result = { status: "ok" };
             calculator.changeIsEdit(true);
           }
 
@@ -79,9 +93,9 @@ export class Button {
         case "bracketClose":
           {
             if (calculator.openBrakets.length === 0) {
-              calculator.setString("Ошибка");
+              result = { status: "error", string: "Ошибка" };
             }
-            calculator.execute(command);
+            result = calculator.execute(command);
             calculator.openBrakets.pop();
           }
           break;
@@ -89,18 +103,26 @@ export class Button {
           {
             if (value === "AC") {
               calculator.setString("0");
+              result = { status: "ok" };
               calculator.changeIsEdit(false);
             }
             if (value === "MC") {
               calculator.memory = 0;
             }
             if (value === "MR") {
-              calculator.setString(calculator.memory);
-              calculator.openBrakets = [];
-              calculator.changeIsEdit(false);
+              if (calculator.getIsEddit()) {
+                calculator.setString(
+                  addToString(calculator.getString(), `(${calculator.memory})`)
+                );
+              } else {
+                calculator.setString(calculator.memory);
+                calculator.openBrakets = [];
+              }
+              result = { status: "ok" };
             }
             if (value === "M+" || value === "M-") {
-              calculator.execute(command);
+              let a = calculator.execute(command);
+              console.log(a);
             }
           }
           break;
@@ -110,7 +132,15 @@ export class Button {
       }
 
       if (this.areaResult) {
-        this.areaResult.innerText = calculator.getString();
+        if (result.status === "ok") {
+          this.areaResult.innerText = calculator.getString();
+        } else {
+          areaError.innerText = result.string;
+          areaError.classList.add("errorOn");
+          setTimeout(() => {
+            areaError.classList.remove("errorOn");
+          }, 2000);
+        }
       }
     });
     this.element = div;

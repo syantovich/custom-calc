@@ -29,10 +29,12 @@ export function calculatorHTML(calculator) {
   buttonsDiv.className = "buttons_calculator";
 
   wrapperCalculatorDiv.className = "wrapper_calc_calculator";
-
-  Button.prototype.areaResult = stringDiv;
+  let areaError = document.createElement("div");
+  areaError.classList.add("error");
   for (let i = 0; i < 10; i++) {
-    buttonsNumber.push(new Button(i, "number", calculator, null, stringDiv));
+    buttonsNumber.push(
+      new Button(i, "number", calculator, null, stringDiv, areaError)
+    );
     buttonsNumber[i].element.classList.add("num");
   }
   buttonsNumber[0].element.classList.add("two_seat");
@@ -72,75 +74,133 @@ export function calculatorHTML(calculator) {
     wrapperDiv.classList.toggle("dark");
   });
 
-  let additionButton = new Button("+", "number", calculator, null, stringDiv),
-    substractionButton = new Button("-", "number", calculator, null, stringDiv),
-    multButton = new Button("*", "number", calculator, null, stringDiv),
-    dotButton = new Button(".", "number", calculator, null, stringDiv),
-    divButton = new Button("/", "number", calculator, null, stringDiv),
-    powButton = new Button("^", "number", calculator, null, stringDiv),
+  let additionButton = new Button(
+      "+",
+      "number",
+      calculator,
+      null,
+      stringDiv,
+      areaError
+    ),
+    substractionButton = new Button(
+      "-",
+      "number",
+      calculator,
+      null,
+      stringDiv,
+      areaError
+    ),
+    multButton = new Button(
+      "*",
+      "number",
+      calculator,
+      null,
+      stringDiv,
+      areaError
+    ),
+    dotButton = new Button(
+      ".",
+      "number",
+      calculator,
+      null,
+      stringDiv,
+      areaError
+    ),
+    divButton = new Button(
+      "/",
+      "number",
+      calculator,
+      null,
+      stringDiv,
+      areaError
+    ),
+    powButton = new Button(
+      "^",
+      "number",
+      calculator,
+      null,
+      stringDiv,
+      areaError
+    ),
     percButton = new Button(
       "%",
       "action",
       calculator,
       new PercCommand(),
-      stringDiv
+      stringDiv,
+      areaError
     ),
     changeButton = new Button(
       "+/-",
       "action",
       calculator,
       new ChangeCommand(),
-      stringDiv
+      stringDiv,
+      areaError
     ),
     squareButton = new Button(
       "x^2",
       "action",
       calculator,
       new SquareCommand(),
-      stringDiv
+      stringDiv,
+      areaError
     ),
     cubeButton = new Button(
       "x^3",
       "action",
       calculator,
       new CubeCommand(),
-      stringDiv
+      stringDiv,
+      areaError
     ),
     tenPowButton = new Button(
       "10^x",
       "action",
       calculator,
       new TenPowXCommand(),
-      stringDiv
+      stringDiv,
+      areaError
     ),
     oneDivButton = new Button(
       "1/x",
       "action",
       calculator,
       new OneDivXCommand(),
-      stringDiv
+      stringDiv,
+      areaError
     ),
-    rootButton = new Button("x^(1/y)", "number", calculator, null, stringDiv),
+    rootButton = new Button(
+      "x^(1/y)",
+      "number",
+      calculator,
+      null,
+      stringDiv,
+      areaError
+    ),
     squareRootButton = new Button(
       "x^(1/2)",
       "action",
       calculator,
       new SquareRootCommand(),
-      stringDiv
+      stringDiv,
+      areaError
     ),
     cubeRootButton = new Button(
       "x^(1/3)",
       "action",
       calculator,
       new CubeRootCommand(),
-      stringDiv
+      stringDiv,
+      areaError
     ),
     factorialButton = new Button(
       "!",
       "action",
       calculator,
       new FactCommand(),
-      stringDiv
+      stringDiv,
+      areaError
     ),
     equalsButton = new Button(
       "=",
@@ -148,18 +208,34 @@ export function calculatorHTML(calculator) {
       calculator,
       new CalcCommand("="),
       stringDiv,
+      areaError,
       historyDiv
     ),
-    openBrackets = new Button("(", "bracketOpen", calculator, null, stringDiv),
+    openBrackets = new Button(
+      "(",
+      "bracketOpen",
+      calculator,
+      null,
+      stringDiv,
+      areaError
+    ),
     closeBrackets = new Button(
       ")",
       "bracketClose",
       calculator,
       new CalcCommand(")"),
-      stringDiv
+      stringDiv,
+      areaError
     ),
     mcButton = new Button("MC", "memory", calculator),
-    mrButton = new Button("MR", "memory", calculator, null, stringDiv),
+    mrButton = new Button(
+      "MR",
+      "memory",
+      calculator,
+      null,
+      stringDiv,
+      areaError
+    ),
     mPlusButton = new Button("M+", "memory", calculator, new CalcCommand("M+")),
     mMinusButton = new Button(
       "M-",
@@ -167,7 +243,14 @@ export function calculatorHTML(calculator) {
       calculator,
       new CalcCommand("M-")
     ),
-    removeButton = new Button("AC", "memory", calculator, null, stringDiv);
+    removeButton = new Button(
+      "AC",
+      "memory",
+      calculator,
+      null,
+      stringDiv,
+      areaError
+    );
 
   buttonsDiv.append(openBrackets.element);
   buttonsDiv.append(closeBrackets.element);
@@ -222,10 +305,12 @@ export function calculatorHTML(calculator) {
     "undo",
     calculator,
     new UndoCommand(),
-    stringDiv
+    stringDiv,
+    areaError
   );
 
   wrapperCalculatorDiv.append(stringDiv);
+  wrapperCalculatorDiv.append(areaError);
   wrapperCalculatorDiv.append(buttonsDiv);
 
   wrapperDiv.append(wrapperCalculatorDiv);
