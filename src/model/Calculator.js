@@ -50,7 +50,7 @@ export class Calculator {
         this.commands.push({
           openBrakets: this.openBrakets,
           command,
-          currString,
+          string: currString,
         });
         if (command.symbol !== "M+" && command.symbol !== "M-") {
           return { status: "ok", string };
@@ -73,7 +73,7 @@ export class Calculator {
         }
         this.commands.pop();
       }
-      return string;
+      return { status: "ok", string };
     };
   }
   calculateString(command, string) {

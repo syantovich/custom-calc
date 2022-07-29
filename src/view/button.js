@@ -127,7 +127,7 @@ export class Button {
           }
           break;
         case "undo": {
-          calculator.undo(command);
+          result = calculator.undo(command);
         }
       }
 
