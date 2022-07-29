@@ -48,6 +48,9 @@ export function calc(str) {
   }
 
   for (let i = 0; i < str.length; i++) {
+    if (str[i][0] === ".") {
+      str[i] = `0${str[i]}`;
+    }
     if (str[i] in symbol) {
       str.splice(i, 0, "!");
       str.splice(i + 2, 0, "!");

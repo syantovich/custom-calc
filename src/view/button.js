@@ -48,15 +48,20 @@ export class Button {
             result = { status: "ok" };
           } else {
             if (
-              !/[.0-9]/.test(this.value) &&
-              /[0-9]/.test(calculator.getString())
+              (!/[.0-9]/.test(this.value) &&
+                /[0-9]/.test(calculator.getString())) ||
+              this.value === "^(1/"
             ) {
               this.addingWithsymbol(calculator);
               result = { status: "ok" };
               calculator.changeIsEdit(true);
             } else {
+              if (this.value === ".") {
+                calculator.setString(`0${this.value}`);
+              } else {
+                calculator.setString(`${this.value}`);
+              }
               calculator.changeIsEdit(true);
-              calculator.setString(`${this.value}`);
               result = { status: "ok" };
             }
           }
